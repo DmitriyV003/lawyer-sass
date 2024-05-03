@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AuthController as AdminAuthControllerAlias;
 use App\Http\Controllers\Admin\RegistrationController as AdminRegistrationControllerAlias;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -25,5 +26,7 @@ Route::prefix('/v1')->group(function () {
             Route::post('/logout', [AuthController::class, 'logout']);
         });
         Route::get('/user', [UserController::class, 'user']);
+        Route::apiResource('customer', CustomerController::class)
+            ->only('index', 'show', 'store', 'destroy', 'update');
     });
 });
