@@ -6,7 +6,7 @@ use App\Enums\UserType;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class RegistrationRequest extends FormRequest
+class RegistrationRequest extends BaseRequest
 {
     public function rules(): array
     {

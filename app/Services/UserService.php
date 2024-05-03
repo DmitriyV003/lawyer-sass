@@ -11,6 +11,7 @@ class UserService
     {
         $user = app(User::class)->fill($params);
         $user->password = Hash::make($params['password']);
+        $user->assignRole(User::ADVOCATE_ROLE);
         $user->save();
     }
 }

@@ -17,6 +17,10 @@ paths:
       responses:
         '201':
           description: Успешный ответ сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
         '500':
           description: Ошибка сервера
   /api/auth/login:
@@ -73,9 +77,30 @@ components:
       bearerFormat: JWT
       description: Header Authorization с токеном и его типом
   schemas:
+    UserData:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        lastname:
+          type: string
+        surname:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        type:
+          type: string
     SuccessResponse:
       type: object
       properties:
+        success:
+          type: integer
+        error:
+          type: array
         message:
           type: string
     UnauthorizedResponse:
@@ -86,10 +111,21 @@ components:
     LoginResponse:
       type: object
       properties:
-        access_token:
-          type: string
-        token_type:
-          type: string
+        error:
+          type: array
+        success:
+          type: integer
+        data:
+          type: object
+          properties:
+            access_token:
+              type: string
+            token_type:
+              type: string
+            expires_in:
+              type: integer
+            user:
+              $ref: '#/components/schemas/UserData'
     LoginRequest:
       type: object
       properties:
