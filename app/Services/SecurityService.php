@@ -8,6 +8,10 @@ class SecurityService
 {
     public function increaseLoginAttempts(User $user): void
     {
+        if ($user->hasRole(User::SUPER_ADMIN_ROLE)) {
+            return;
+        }
+
         $user->login_attempts += 1;
         if ($user->login_attempts === User::MAX_LOGIN_ATTEMPTS) {
             $user->is_active = false;

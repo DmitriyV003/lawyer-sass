@@ -11,4 +11,12 @@ class LoginRequest extends BaseRequest
             'password' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'email.required' => 'Email обязателен',
+            'password.required' => 'Пароль обязателен',
+        ];
+    }
 }

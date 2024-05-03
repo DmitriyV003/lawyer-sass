@@ -6,7 +6,7 @@ info:
 servers:
   - url: http://example.com
 paths:
-  /api/registration:
+  /api/v1/registration:
     post:
       summary: Регистрация пользователя
       requestBody:
@@ -23,9 +23,26 @@ paths:
                 $ref: '#/components/schemas/SuccessResponse'
         '500':
           description: Ошибка сервера
-  /api/auth/login:
+  /api/v1/admin/registration:
     post:
-      summary: Логин
+      summary: Регистрация админа
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegistrationAdminRequest'
+      responses:
+        '201':
+          description: Успешный ответ сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '500':
+          description: Ошибка сервера
+  /api/v1/auth/login:
+    post:
+      summary: Логин юзера
       requestBody:
         content:
           application/json:
@@ -46,7 +63,30 @@ paths:
                 $ref: '#/components/schemas/UnauthorizedResponse'
         '500':
           description: Ошибка сервера
-  /api/logout:
+  /api/v1/admin/auth/login:
+    post:
+      summary: Логин админа
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Успешный ответ сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedResponse'
+        '500':
+          description: Ошибка сервера
+  /api/v1/auth/logout:
     post:
       summary: Logout
       security:
@@ -165,5 +205,22 @@ components:
         - phone
         - type
         - lastname
+        - password
+        - repeat_password
+    RegistrationAdminRequest:
+      type: object
+      properties:
+        email:
+          type: string
+        phone:
+          type: string
+          example: 79859654123
+        password:
+          type: string
+        repeat_password:
+          type: string
+      required:
+        - email
+        - phone
         - password
         - repeat_password

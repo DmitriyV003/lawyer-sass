@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a9fe6321-5bab-4b34-8c2c-d5f6f0f8ae8c",
+		"_postman_id": "b7b19349-11fc-47ca-b4e9-0cc8e9de2d9f",
 		"name": "Lawyer-sass",
 		"description": "Lawyer-sass",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
@@ -23,7 +23,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"email\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"type\": \"advocate\",\n  \"lastname\": \"<string>\",\n  \"password\": \"<string>\",\n  \"repeat_password\": \"<string>\",\n  \"surname\": \"<string>\"\n}",
+					"raw": "{\n  \"email\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"type\": \"lawyer\",\n  \"lastname\": \"<string>\",\n  \"password\": \"<string>\",\n  \"repeat_password\": \"<string>\",\n  \"surname\": \"<string>\"\n}",
 					"options": {
 						"raw": {
 							"headerFamily": "json",
@@ -32,12 +32,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/registration",
+					"raw": "{{baseUrl}}/api/v1/registration",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"api",
+						"v1",
 						"registration"
 					]
 				}
@@ -59,7 +60,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"email\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"type\": \"advocate\",\n  \"lastname\": \"<string>\",\n  \"password\": \"<string>\",\n  \"repeat_password\": \"<string>\",\n  \"surname\": \"<string>\"\n}",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"type\": \"lawyer\",\n  \"lastname\": \"<string>\",\n  \"password\": \"<string>\",\n  \"repeat_password\": \"<string>\",\n  \"surname\": \"<string>\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -68,12 +69,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/registration",
+							"raw": "{{baseUrl}}/api/v1/registration",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
+								"v1",
 								"registration"
 							]
 						}
@@ -102,7 +104,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"email\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"type\": \"advocate\",\n  \"lastname\": \"<string>\",\n  \"password\": \"<string>\",\n  \"repeat_password\": \"<string>\",\n  \"surname\": \"<string>\"\n}",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"name\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"type\": \"lawyer\",\n  \"lastname\": \"<string>\",\n  \"password\": \"<string>\",\n  \"repeat_password\": \"<string>\",\n  \"surname\": \"<string>\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
@@ -111,12 +113,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/registration",
+							"raw": "{{baseUrl}}/api/v1/registration",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
+								"v1",
 								"registration"
 							]
 						}
@@ -131,7 +134,136 @@
 			]
 		},
 		{
-			"name": "Логин",
+			"name": "Регистрация админа",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"password\": \"<string>\",\n  \"repeat_password\": \"<string>\"\n}",
+					"options": {
+						"raw": {
+							"headerFamily": "json",
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/admin/registration",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"registration"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Успешный ответ сервера",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"password\": \"<string>\",\n  \"repeat_password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/admin/registration",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"registration"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"success\": \"<integer>\",\n  \"error\": \"<array>\",\n  \"message\": \"<string>\"\n}"
+				},
+				{
+					"name": "Ошибка сервера",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"password\": \"<string>\",\n  \"repeat_password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/admin/registration",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"registration"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Логин юзера",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -155,12 +287,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/api/auth/login",
+					"raw": "{{baseUrl}}/api/v1/auth/login",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"api",
+						"v1",
 						"auth",
 						"login"
 					]
@@ -192,12 +325,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/auth/login",
+							"raw": "{{baseUrl}}/api/v1/auth/login",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
+								"v1",
 								"auth",
 								"login"
 							]
@@ -240,12 +374,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/auth/login",
+							"raw": "{{baseUrl}}/api/v1/auth/login",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
+								"v1",
 								"auth",
 								"login"
 							]
@@ -284,12 +419,195 @@
 							}
 						},
 						"url": {
-							"raw": "{{baseUrl}}/api/auth/login",
+							"raw": "{{baseUrl}}/api/v1/auth/login",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Логин админа",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+					"options": {
+						"raw": {
+							"headerFamily": "json",
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/v1/admin/auth/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Успешный ответ сервера",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/admin/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error\": \"<array>\",\n  \"success\": \"<integer>\",\n  \"data\": {\n    \"access_token\": \"<string>\",\n    \"token_type\": \"<string>\",\n    \"expires_in\": \"<integer>\",\n    \"user\": {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"lastname\": \"<string>\",\n      \"surname\": \"<string>\",\n      \"email\": \"<string>\",\n      \"phone\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  }\n}"
+				},
+				{
+					"name": "Пользователь не авторизован",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/admin/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n  \"error\": \"<string>\"\n}"
+				},
+				{
+					"name": "Ошибка сервера",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/admin/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
 								"auth",
 								"login"
 							]
@@ -315,12 +633,14 @@
 					}
 				],
 				"url": {
-					"raw": "{{baseUrl}}/api/logout",
+					"raw": "{{baseUrl}}/api/v1/auth/logout",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"api",
+						"v1",
+						"auth",
 						"logout"
 					]
 				}
@@ -337,12 +657,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/api/logout",
+							"raw": "{{baseUrl}}/api/v1/auth/logout",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
+								"v1",
+								"auth",
 								"logout"
 							]
 						}
@@ -370,12 +692,14 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/api/logout",
+							"raw": "{{baseUrl}}/api/v1/auth/logout",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
+								"v1",
+								"auth",
 								"logout"
 							]
 						}
@@ -398,12 +722,14 @@
 						"method": "POST",
 						"header": [],
 						"url": {
-							"raw": "{{baseUrl}}/api/logout",
+							"raw": "{{baseUrl}}/api/v1/auth/logout",
 							"host": [
 								"{{baseUrl}}"
 							],
 							"path": [
 								"api",
+								"v1",
+								"auth",
 								"logout"
 							]
 						}
