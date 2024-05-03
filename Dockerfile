@@ -1,6 +1,6 @@
-FROM composer:2.2 AS composer
+FROM composer:2.7 AS composer
 
-FROM php:8.1-fpm as base
+FROM php:8.2-fpm as base
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git \
@@ -35,7 +35,6 @@ WORKDIR /src
 ENV PATH="$PATH:/src/vendor/bin"
 COPY --from=composer /usr/bin/composer /usr/bin/composer
 COPY composer.* ./
-RUN pecl install imagick && docker-php-ext-enable imagick
 
 FROM base as prod
 RUN composer install --no-scripts --no-autoloader --no-interaction --no-dev
@@ -45,7 +44,7 @@ RUN chgrp -R www-data storage bootstrap/cache && chmod -R ug+rwx storage bootstr
     && composer dump-autoload --optimize
 
 FROM base as dev
-RUN composer install --no-scripts --no-autoloader --no-interaction --dev
+RUN composer install --no-scripts --no-autoloader --no-interaction
 
 COPY . ./
 RUN chgrp -R www-data storage bootstrap/cache && chmod -R ug+rwx storage bootstrap/cache \

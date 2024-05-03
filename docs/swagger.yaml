@@ -1,0 +1,133 @@
+openapi: 3.0.3
+info:
+  title: Lawyer-sass
+  description: Lawyer-sass
+  version: 1.0.0
+servers:
+  - url: http://example.com
+paths:
+  /api/registration:
+    post:
+      summary: Регистрация пользователя
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegistrationRequest'
+      responses:
+        '201':
+          description: Успешный ответ сервера
+        '500':
+          description: Ошибка сервера
+  /api/auth/login:
+    post:
+      summary: Логин
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Успешный ответ сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedResponse'
+        '500':
+          description: Ошибка сервера
+  /api/logout:
+    post:
+      summary: Logout
+      security:
+        - securitySchemes: []
+      responses:
+        '200':
+          description: Успешный ответ сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedResponse'
+        '500':
+          description: Ошибка сервера
+
+components:
+  securitySchemes:
+    jwtAuth:
+      type: http
+      in: header
+      name: Bearer Authentication
+      scheme: bearer
+      bearerFormat: JWT
+      description: Header Authorization с токеном и его типом
+  schemas:
+    SuccessResponse:
+      type: object
+      properties:
+        message:
+          type: string
+    UnauthorizedResponse:
+      type: object
+      properties:
+        error:
+          type: string
+    LoginResponse:
+      type: object
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+    LoginRequest:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+      required:
+        - email
+        - password
+    RegistrationRequest:
+      type: object
+      properties:
+        email:
+          type: string
+        name:
+          type: string
+        phone:
+          type: string
+          example: 79859654123
+        type:
+          type: string
+          enum:
+            - lawyer
+            - advocate
+        lastname:
+          type: string
+        surname:
+          type: string
+        password:
+          type: string
+        repeat_password:
+          type: string
+      required:
+        - email
+        - name
+        - phone
+        - type
+        - lastname
+        - password
+        - repeat_password

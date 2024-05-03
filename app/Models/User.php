@@ -3,45 +3,74 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class User extends Authenticatable
+class User extends Authenticatable implements JWTSubject
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable, SoftDeletes;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    public const MAX_LOGIN_ATTEMPTS = 3;
+
     protected $fillable = [
         'name',
+        'lastname',
+        'surname',
         'email',
+        'phone',
+        'type',
+        'is_active',
+        'login_attempts',
         'password',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
+    protected $attributes = [
+        'is_active' => true,
+        'login_attempts' => 0,
+    ];
+
     protected function casts(): array
     {
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'is_active' => 'boolean'
         ];
+    }
+
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
+
+    public function isActive(): bool
+    {
+        return $this->is_active && $this->login_attempts < self::MAX_LOGIN_ATTEMPTS;
+    }
+
+    public function scopeEmail($builder, string $email): void
+    {
+        $builder->where('email', $email);
+    }
+
+    protected function phone(): Attribute
+    {
+        return Attribute::make(
+            set: fn(string $value) => sprintf('+%s', $value)
+        );
     }
 }
