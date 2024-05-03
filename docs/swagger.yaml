@@ -90,7 +90,7 @@ paths:
     post:
       summary: Logout
       security:
-        - securitySchemes: []
+        - securitySchemes: [ ]
       responses:
         '200':
           description: Успешный ответ сервера
@@ -99,6 +99,103 @@ paths:
               schema:
                 $ref: '#/components/schemas/SuccessResponse'
         '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedResponse'
+        '500':
+          description: Ошибка сервера
+  /api/v1/auth/customer:
+    post:
+      summary: Создание клиента
+      security:
+        - securitySchemes: [ ]
+      responses:
+        '201':
+          description: Успешный ответ сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+        '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedResponse'
+        '500':
+          description: Ошибка сервера
+    get:
+      summary: Получение клиентов пагинацией
+      security:
+        - securitySchemes: [ ]
+      responses:
+        '201':
+          description: Успешный ответ сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponsePaginated'
+        '403':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedResponse'
+        '500':
+          description: Ошибка сервера
+  /api/v1/auth/customer/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+    get:
+      summary: Получение клиента по id
+      security:
+        - securitySchemes: [ ]
+      responses:
+        '201':
+          description: Успешный ответ сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+        '403':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedResponse'
+        '500':
+          description: Ошибка сервера
+    delete:
+      summary: Удаление(мягкое) клиента по id
+      security:
+        - securitySchemes: [ ]
+      responses:
+        '204':
+          description: Успешный ответ сервера
+        '403':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedResponse'
+        '500':
+          description: Ошибка сервера
+    put:
+      summary: Обновление клиента
+      security:
+        - securitySchemes: [ ]
+      responses:
+        '201':
+          description: Успешный ответ сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponse'
+        '403':
           description: Пользователь не авторизован
           content:
             application/json:
@@ -117,6 +214,99 @@ components:
       bearerFormat: JWT
       description: Header Authorization с токеном и его типом
   schemas:
+    PaginateMeta:
+      type: object
+      properties:
+        links:
+          type: object
+          properties:
+            first:
+              type: string
+            last:
+              type: string
+            prev:
+              type: string
+            next:
+              type: string
+        meta:
+          type: object
+          properties:
+            current_page:
+              type: integer
+            from:
+              type: integer
+            last_page:
+              type: integer
+            links:
+              type: array
+              items:
+                properties:
+                  url:
+                    type: string
+                  label:
+                    type: string
+                  active:
+                    type: boolean
+            path:
+              type: string
+            per_page:
+              type: integer
+            to:
+              type: integer
+            total:
+              type: integer
+    CustomerResponsePaginated:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            - $ref: '#/components/schemas/CustomerData'
+          additionalProperties:
+            $ref: '#/components/schemas/PaginateMeta'
+    CustomerResponse:
+      type: object
+      properties:
+        success:
+          type: integer
+        error:
+          type: string
+        data:
+          $ref: '#/components/schemas/CustomerData'
+    CustomerData:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        telegram:
+          type: string
+        whats_app:
+          type: string
+        created_at:
+          type: string
+        updated_at:
+          type: string
+        deleted_at:
+          type: string
+    CustomerRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        phone:
+          type: string
+        telegram:
+          type: string
+        whats_app:
+          type: string
     UserData:
       type: object
       properties:
