@@ -11,6 +11,6 @@ class RegistrationController extends Controller
     {
         app(UserService::class)->create($request->validated());
 
-        return response()->json([], 201);
+        return api_response([], 201);
     }
 }

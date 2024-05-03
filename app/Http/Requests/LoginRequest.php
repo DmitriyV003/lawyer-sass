@@ -2,11 +2,7 @@
 
 namespace App\Http\Requests;
 
-use App\Enums\UserType;
-use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
-
-class LoginRequest extends FormRequest
+class LoginRequest extends BaseRequest
 {
     public function rules(): array
     {
