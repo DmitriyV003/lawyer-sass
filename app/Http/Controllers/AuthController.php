@@ -16,6 +16,10 @@ class AuthController extends Controller
     {
         $credentials = $request->validated();
         $user = User::email($credentials['email'])->first();
+        if ($this->restrictedRole($user)) {
+            return api_error(['error' => 'Unauthorized'], 401);
+        }
+
         if (!$token = auth()->attempt($credentials)) {
             $user ? app(SecurityService::class)->increaseLoginAttempts($user) : null;
             return api_error(['error' => 'Unauthorized'], 401);
@@ -38,13 +42,18 @@ class AuthController extends Controller
         return api_response(['message' => 'Successfully logged out']);
     }
 
+    protected function restrictedRole($user): bool
+    {
+        return $user?->hasRole(User::SUPER_ADMIN_ROLE);
+    }
+
     protected function respondWithToken($token)
     {
         return api_response([
             'access_token' => $token,
             'token_type' => self::TOKEN_TYPE,
             'expires_in' => auth()->factory(JWTFactory::class)->getTTL() * 60,
-            'user' => new UserResource(auth()->user())
+            'user' => new UserResource(auth()->user()->load('roles')),
         ]);
     }
 }

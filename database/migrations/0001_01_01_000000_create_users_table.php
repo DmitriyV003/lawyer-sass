@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('surname')->nullable();
             $table->string('email')->unique();
             $table->string('phone', 20);
-            $table->enum('type', ['lawyer', 'advocate']);
+            $table->enum('type', ['lawyer', 'advocate', '']);
             $table->boolean('is_active')->default(true);
             $table->integer('login_attempts')->default(0);
             $table->timestamp('email_verified_at')->nullable();

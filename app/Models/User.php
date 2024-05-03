@@ -17,6 +17,7 @@ class User extends Authenticatable implements JWTSubject
     public const MAX_LOGIN_ATTEMPTS = 3;
 
     public const ADVOCATE_ROLE = 'advocate';
+    public const SUPER_ADMIN_ROLE = 'super admin';
 
     protected $fillable = [
         'name',

@@ -8,6 +8,6 @@ class UserController extends Controller
 {
     public function user()
     {
-        return api_response(new UserResource(auth()->user()));
+        return api_response(new UserResource(auth()->user()->load('roles')));
     }
 }
