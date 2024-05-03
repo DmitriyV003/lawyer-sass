@@ -11,15 +11,6 @@ class CustomerPolicy
 {
     use HandlesAuthorization;
 
-    public function before(User $user, string $ability): bool|null
-    {
-        if ($user->hasRole(User::SUPER_ADMIN_ROLE)) {
-            return true;
-        }
-
-        return null;
-    }
-
     public function viewAny(User $user): bool
     {
         return true;

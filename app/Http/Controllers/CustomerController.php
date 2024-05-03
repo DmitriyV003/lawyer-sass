@@ -25,7 +25,10 @@ class CustomerController extends Controller
     {
         $this->authorize('create', Customer::class);
 
-        return api_response(new CustomerResource(app(CustomerService::class)->create($request->validated())), 201);
+        return api_response(
+            new CustomerResource(app(CustomerService::class)->create($request->validated(), auth()->user())),
+            201,
+        );
     }
 
     public function show(Customer $customer)
