@@ -203,6 +203,103 @@ paths:
                 $ref: '#/components/schemas/UnauthorizedResponse'
         '500':
           description: Ошибка сервера
+  /api/v1/auth/case-category:
+    post:
+      summary: Создание категории дела
+      security:
+        - securitySchemes: [ ]
+      responses:
+        '201':
+          description: Успешный ответ сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CaseResponse'
+        '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedResponse'
+        '500':
+          description: Ошибка сервера
+    get:
+      summary: Получение всех категорий дел
+      security:
+        - securitySchemes: [ ]
+      responses:
+        '201':
+          description: Успешный ответ сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CaseResponseCollection'
+        '403':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedResponse'
+        '500':
+          description: Ошибка сервера
+  /api/v1/auth/case-category/{id}:
+    parameters:
+      - in: path
+        name: id
+        required: true
+    get:
+      summary: Получение категории дела по id
+      security:
+        - securitySchemes: [ ]
+      responses:
+        '201':
+          description: Успешный ответ сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CaseResponse'
+        '403':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedResponse'
+        '500':
+          description: Ошибка сервера
+    delete:
+      summary: Удаление(мягкое) категории дела по id
+      security:
+        - securitySchemes: [ ]
+      responses:
+        '204':
+          description: Успешный ответ сервера
+        '403':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedResponse'
+        '500':
+          description: Ошибка сервера
+    put:
+      summary: Обновление категории дела
+      security:
+        - securitySchemes: [ ]
+      responses:
+        '201':
+          description: Успешный ответ сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CaseResponse'
+        '403':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedResponse'
+        '500':
+          description: Ошибка сервера
 
 components:
   securitySchemes:
@@ -273,6 +370,43 @@ components:
           type: string
         data:
           $ref: '#/components/schemas/CustomerData'
+    CaseResponseCollection:
+      type: object
+      properties:
+        success:
+          type: integer
+        error:
+          type: string
+        data:
+          type: array
+          items:
+            - $ref: '#/components/schemas/CaseData'
+    CaseResponse:
+      type: object
+      properties:
+        success:
+          type: integer
+        error:
+          type: string
+        data:
+          $ref: '#/components/schemas/CaseData'
+    CaseData:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        label:
+          type: string
+        color:
+          type: string
+        created_at:
+          type: string
+        updated_at:
+          type: string
+        deleted_at:
+          type: string
     CustomerData:
       type: object
       properties:
