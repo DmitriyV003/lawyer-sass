@@ -7,6 +7,13 @@ use Illuminate\Support\Facades\Hash;
 
 class UserService
 {
+    private ?User $user;
+
+    public function __construct(?User $user)
+    {
+        $this->user = $user;
+    }
+
     public function create(array $params): void
     {
         $user = app(User::class)->fill($params);
@@ -24,5 +31,17 @@ class UserService
         $user->password = Hash::make($params['password']);
         $user->assignRole(User::SUPER_ADMIN_ROLE);
         $user->save();
+    }
+
+    public function update(array $params): User
+    {
+        $this->user->update($params);
+
+        return $this->user;
+    }
+
+    public function delete(): void
+    {
+        $this->user->delete();
     }
 }
