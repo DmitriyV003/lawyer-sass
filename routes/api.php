@@ -28,6 +28,8 @@ Route::prefix('/v1')->group(function () {
             Route::post('/logout', [AuthController::class, 'logout']);
         });
         Route::get('/user', [UserController::class, 'user']);
+        Route::delete('/user', [UserController::class, 'destroy']);
+        Route::put('/user', [UserController::class, 'update']);
         Route::apiResource('customer', CustomerController::class)
             ->only('index', 'show', 'store', 'destroy', 'update');
         Route::apiResource('case-category', CaseCategoryController::class)
