@@ -8,6 +8,6 @@ class AuthController extends UserAuthController
 {
     protected function restrictedRole($user): bool
     {
-        return false;
+        return true;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\CaseCategory;
+use App\Models\LawsuitCategory;
 use App\Models\Customer;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->dateTime('power_of_attorney_signing_date')->nullable();
             $table->dateTime('power_of_attorney_validity')->nullable();
             $table->foreignIdFor(Customer::class)->nullable();
-            $table->foreignIdFor(CaseCategory::class);
+            $table->foreignIdFor(LawsuitCategory::class);
             $table->foreignIdFor(User::class);
             $table->softDeletes();
             $table->timestamps();

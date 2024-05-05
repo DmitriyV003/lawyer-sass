@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Lawsuit extends Model
@@ -30,14 +31,19 @@ class Lawsuit extends Model
         return $this->belongsTo(Customer::class);
     }
 
-    public function caseCategory(): BelongsTo
+    public function lawsuitCategory(): BelongsTo
     {
-        return $this->belongsTo(CaseCategory::class);
+        return $this->belongsTo(LawsuitCategory::class);
     }
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function authorities(): HasMany
+    {
+        return $this->hasMany(Authority::class);
     }
 
     protected function casts()
