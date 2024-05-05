@@ -18,7 +18,15 @@ class LawsuitController extends Controller
     {
         $this->authorize('viewAny', Lawsuit::class);
 
-        return LawsuitResource::collection(auth()->user()->lawsuits()->paginate(self::ITEMS_PER_PAGE));
+        return LawsuitResource::collection(
+            auth()
+                ->user()
+                ->lawsuits()
+                ->with(['customer', 'lawsuitCategory', 'authorities' => function ($query) {
+                    $query->orderBy('created_at', 'desc')->limit(1);
+                }])
+                ->paginate(self::ITEMS_PER_PAGE),
+        );
     }
 
     public function store(LawsuitRequest $request)
@@ -35,7 +43,7 @@ class LawsuitController extends Controller
     {
         $this->authorize('view', $lawsuit);
 
-        return api_response(new LawsuitResource($lawsuit));
+        return api_response(new LawsuitResource($lawsuit->load(['lawsuitCategory', 'customer', 'authorities'])));
     }
 
     public function update(LawsuitRequest $request, Lawsuit $lawsuit)

@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\CaseCategory;
+use App\Models\LawsuitCategory;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class CaseCategoryPolicy
+class LawsuitCategoryPolicy
 {
     use HandlesAuthorization;
 
@@ -15,7 +15,7 @@ class CaseCategoryPolicy
         return true;
     }
 
-    public function view(User $user, CaseCategory $caseCategory): bool
+    public function view(User $user, LawsuitCategory $caseCategory): bool
     {
         return true;
     }
@@ -25,22 +25,22 @@ class CaseCategoryPolicy
         return true;
     }
 
-    public function update(User $user, CaseCategory $caseCategory): bool
+    public function update(User $user, LawsuitCategory $caseCategory): bool
     {
         return true;
     }
 
-    public function delete(User $user, CaseCategory $caseCategory): bool
+    public function delete(User $user, LawsuitCategory $caseCategory): bool
     {
         return true;
     }
 
-    public function restore(User $user, CaseCategory $caseCategory): bool
+    public function restore(User $user, LawsuitCategory $caseCategory): bool
     {
         return true;
     }
 
-    public function forceDelete(User $user, CaseCategory $caseCategory): bool
+    public function forceDelete(User $user, LawsuitCategory $caseCategory): bool
     {
         return true;
     }

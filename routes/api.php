@@ -3,7 +3,8 @@
 use App\Http\Controllers\Admin\AuthController as AdminAuthControllerAlias;
 use App\Http\Controllers\Admin\RegistrationController as AdminRegistrationControllerAlias;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CaseCategoryController;
+use App\Http\Controllers\AuthorityController;
+use App\Http\Controllers\LawsuitCategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LawsuitController;
 use App\Http\Controllers\RegistrationController;
@@ -32,9 +33,11 @@ Route::prefix('/v1')->group(function () {
         Route::put('/user', [UserController::class, 'update']);
         Route::apiResource('customer', CustomerController::class)
             ->only('index', 'show', 'store', 'destroy', 'update');
-        Route::apiResource('case-category', CaseCategoryController::class)
+        Route::apiResource('case-category', LawsuitCategoryController::class)
             ->only('index', 'show', 'store', 'destroy', 'update');
         Route::apiResource('lawsuit', LawsuitController::class)
             ->only('index', 'show', 'store', 'destroy', 'update');
+        Route::apiResource('authority', AuthorityController::class)
+            ->only('show', 'store', 'destroy', 'update');
     });
 });
