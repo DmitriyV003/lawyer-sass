@@ -33,10 +33,11 @@ Route::prefix('/v1')->group(function () {
         Route::put('/user', [UserController::class, 'update']);
         Route::apiResource('customer', CustomerController::class)
             ->only('index', 'show', 'store', 'destroy', 'update');
-        Route::apiResource('case-category', LawsuitCategoryController::class)
+        Route::apiResource('lawsuit-category', LawsuitCategoryController::class)
             ->only('index', 'show', 'store', 'destroy', 'update');
         Route::apiResource('lawsuit', LawsuitController::class)
             ->only('index', 'show', 'store', 'destroy', 'update');
+        Route::get('/lawsuit/{lawsuit}/authorities', [LawsuitController::class, 'authorities']);
         Route::apiResource('authority', AuthorityController::class)
             ->only('show', 'store', 'destroy', 'update');
     });

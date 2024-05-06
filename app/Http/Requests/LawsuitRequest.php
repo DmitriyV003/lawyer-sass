@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Validation\Rule;
+
 class LawsuitRequest extends BaseRequest
 {
     public function rules(): array
@@ -16,8 +18,18 @@ class LawsuitRequest extends BaseRequest
             'power_of_attorney' => 'nullable',
             'power_of_attorney_signing_date' => 'nullable|date',
             'power_of_attorney_validity' => 'nullable|date',
-            'customer_id' => 'nullable|exists:customers',
-            'case_category_id' => 'required|exists:case_categories',
+            'customer_id' => [
+                'nullable',
+                Rule::exists('customers', 'id')->where(function ($query) {
+                   return $query->where('user_id', auth()->user()->id);
+                }),
+            ],
+            'lawsuit_category_id' => [
+                'required',
+                Rule::exists('lawsuit_categories', 'id')->where(function ($query) {
+                    return $query->where('user_id', auth()->user()->id);
+                }),
+            ],
         ];
     }
 }

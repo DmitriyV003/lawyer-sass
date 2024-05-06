@@ -13,11 +13,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('color');
-            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(User::class)->references('id')->on('users');
             $table->softDeletes();
             $table->timestamps();
-
-            $table->unique(['user_id', 'name', 'color']);
         });
     }
 

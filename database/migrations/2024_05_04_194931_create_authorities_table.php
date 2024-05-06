@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('judge');
             $table->string('cabinet');
             $table->text('comment')->nullable();
-            $table->foreignIdFor(Lawsuit::class);
+            $table->foreignIdFor(Lawsuit::class)->references('id')->on('lawsuits');
             $table->timestamps();
         });
     }

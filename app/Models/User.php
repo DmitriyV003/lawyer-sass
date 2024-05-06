@@ -61,6 +61,11 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Lawsuit::class);
     }
 
+    public function lawsuitCategories(): HasMany
+    {
+        return $this->hasMany(LawsuitCategory::class);
+    }
+
     public function getJWTIdentifier()
     {
         return $this->getKey();
