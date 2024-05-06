@@ -16,7 +16,7 @@ class LawsuitCategoryController extends Controller
     {
         $this->authorize('viewAny', LawsuitCategory::class);
 
-        return api_response(LawsuitCategoryResource::collection(LawsuitCategory::all()));
+        return api_response(LawsuitCategoryResource::collection(auth()->user()->lawsuitCategories));
     }
 
     public function store(LawsuitCategoryRequest $request)
@@ -29,27 +29,27 @@ class LawsuitCategoryController extends Controller
         );
     }
 
-    public function show(LawsuitCategory $caseCategory)
+    public function show(LawsuitCategory $lawsuitCategory)
     {
-        $this->authorize('view', $caseCategory);
+        $this->authorize('view', $lawsuitCategory);
 
-        return api_response(new LawsuitCategoryResource($caseCategory));
+        return api_response(new LawsuitCategoryResource($lawsuitCategory));
     }
 
-    public function update(LawsuitCategoryRequest $request, LawsuitCategory $caseCategory)
+    public function update(LawsuitCategoryRequest $request, LawsuitCategory $lawsuitCategory)
     {
-        $this->authorize('update', $caseCategory);
+        $this->authorize('update', $lawsuitCategory);
 
-        $caseCategory->update($request->validated());
+        $lawsuitCategory->update($request->validated());
 
-        return api_response(new LawsuitCategoryResource($caseCategory));
+        return api_response(new LawsuitCategoryResource($lawsuitCategory));
     }
 
-    public function destroy(LawsuitCategory $caseCategory)
+    public function destroy(LawsuitCategory $lawsuitCategory)
     {
-        $this->authorize('delete', $caseCategory);
+        $this->authorize('delete', $lawsuitCategory);
 
-        $caseCategory->delete();
+        $lawsuitCategory->delete();
 
         return api_response('', 204);
     }

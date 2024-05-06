@@ -22,7 +22,7 @@ class Lawsuit extends Model
         'power_of_attorney_signing_date',
         'power_of_attorney_validity',
         'customer_id',
-        'case_category_id',
+        'lawsuit_category_id',
         'user_id',
     ];
 

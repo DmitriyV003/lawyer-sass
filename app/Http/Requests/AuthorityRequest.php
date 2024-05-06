@@ -2,9 +2,9 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class AuthorityRequest extends FormRequest
+class AuthorityRequest extends BaseRequest
 {
     public function rules(): array
     {
@@ -15,7 +15,12 @@ class AuthorityRequest extends FormRequest
             'judge' => 'required|max:255',
             'cabinet' => 'required|max:255',
             'comment' => 'nullable',
-            'lawsuit_id' => 'required|exists:lawsuits',
+            'lawsuit_id' => [
+                'required',
+                Rule::exists('lawsuits')->where(function ($query) {
+                    return $query->where('user_id', auth()->user()->id);
+                }),
+            ],
         ];
     }
 

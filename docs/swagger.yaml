@@ -106,11 +106,16 @@ paths:
                 $ref: '#/components/schemas/UnauthorizedResponse'
         '500':
           description: Ошибка сервера
-  /api/v1/auth/customer:
+  /api/v1/customer:
     post:
       summary: Создание клиента
       security:
         - securitySchemes: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerRequest'
       responses:
         '201':
           description: Успешный ответ сервера
@@ -145,7 +150,7 @@ paths:
                 $ref: '#/components/schemas/UnauthorizedResponse'
         '500':
           description: Ошибка сервера
-  /api/v1/auth/customer/{id}:
+  /api/v1/customer/{id}:
     parameters:
       - in: path
         name: id
@@ -188,6 +193,11 @@ paths:
       summary: Обновление клиента
       security:
         - securitySchemes: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CustomerRequest'
       responses:
         '201':
           description: Успешный ответ сервера
@@ -203,18 +213,23 @@ paths:
                 $ref: '#/components/schemas/UnauthorizedResponse'
         '500':
           description: Ошибка сервера
-  /api/v1/auth/case-category:
+  /api/v1/lawsuit-category:
     post:
       summary: Создание категории дела
       security:
         - securitySchemes: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LawsuitCategoryRequest'
       responses:
         '201':
           description: Успешный ответ сервера
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CaseResponse'
+                $ref: '#/components/schemas/LawsuitCategoryResponse'
         '401':
           description: Пользователь не авторизован
           content:
@@ -233,7 +248,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CaseResponseCollection'
+                $ref: '#/components/schemas/LawsuitCategoryResponseCollection'
         '403':
           description: Пользователь не авторизован
           content:
@@ -242,7 +257,7 @@ paths:
                 $ref: '#/components/schemas/UnauthorizedResponse'
         '500':
           description: Ошибка сервера
-  /api/v1/auth/case-category/{id}:
+  /api/v1/lawsuit-category/{id}:
     parameters:
       - in: path
         name: id
@@ -257,7 +272,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CaseResponse'
+                $ref: '#/components/schemas/LawsuitCategoryResponse'
         '403':
           description: Пользователь не авторизован
           content:
@@ -285,13 +300,86 @@ paths:
       summary: Обновление категории дела
       security:
         - securitySchemes: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LawsuitCategoryRequest'
       responses:
         '201':
           description: Успешный ответ сервера
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CaseResponse'
+                $ref: '#/components/schemas/LawsuitCategoryResponse'
+        '403':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedResponse'
+        '500':
+          description: Ошибка сервера
+  /api/v1/lawsuit/{id}/authorities:
+    get:
+      parameters:
+        - in: path
+          name: id
+          required: true
+      summary: Получение всех органов рассморений для дела по id
+      security:
+        - securitySchemes: [ ]
+      responses:
+        '201':
+          description: Успешный ответ сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthorityCollectionResponse'
+        '403':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedResponse'
+        '500':
+          description: Ошибка сервера
+  /api/v1/lawsuit:
+    post:
+      summary: Создание дела
+      security:
+        - securitySchemes: [ ]
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LawsuitRequest'
+      responses:
+        '201':
+          description: Успешный ответ сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LawsuitResponse'
+        '401':
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnauthorizedResponse'
+        '500':
+          description: Ошибка сервера
+    get:
+      summary: Получение дел пагинацией
+      security:
+        - securitySchemes: [ ]
+      responses:
+        '201':
+          description: Успешный ответ сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CustomerResponsePaginated'
         '403':
           description: Пользователь не авторизован
           content:
@@ -370,7 +458,7 @@ components:
           type: string
         data:
           $ref: '#/components/schemas/CustomerData'
-    CaseResponseCollection:
+    AuthorityCollectionResponse:
       type: object
       properties:
         success:
@@ -380,8 +468,29 @@ components:
         data:
           type: array
           items:
-            - $ref: '#/components/schemas/CaseData'
-    CaseResponse:
+            - $ref: '#/components/schemas/AuthorityData'
+    AuthorityData:
+      type: object
+      properties:
+        id:
+          type: integer
+        lawsuit_number:
+          type: string
+        lawsuit_number_link:
+          type: string
+        authority:
+          type: string
+        judge:
+          type: string
+        cabinet:
+          type: string
+        comment:
+          type: string
+        created_at:
+          type: string
+        updated_at:
+          type: string
+    LawsuitCategoryResponseCollection:
       type: object
       properties:
         success:
@@ -389,8 +498,66 @@ components:
         error:
           type: string
         data:
-          $ref: '#/components/schemas/CaseData'
-    CaseData:
+          type: array
+          items:
+            - $ref: '#/components/schemas/LawsuitCategoryData'
+    LawsuitCategoryResponse:
+      type: object
+      properties:
+        success:
+          type: integer
+        error:
+          type: string
+        data:
+          $ref: '#/components/schemas/LawsuitCategoryData'
+    LawsuitResponse:
+      type: object
+      properties:
+        success:
+          type: integer
+        error:
+          type: string
+        data:
+          $ref: '#/components/schemas/LawsuitData'
+    LawsuitData:
+      type: object
+      properties:
+        id:
+          type: integer
+        plot:
+          type: string
+        opponent:
+          type: string
+        rating:
+          type: integer
+        contract_number:
+          type: string
+          nullable: true
+        contract_signing_date:
+          type: string
+          nullable: true
+        contract_validity:
+          type: string
+          nullable: true
+        power_of_attorney:
+          type: string
+          nullable: true
+        power_of_attorney_signing_date:
+          type: string
+          nullable: true
+        power_of_attorney_validity:
+          type: string
+          nullable: true
+        customer_id:
+          type: integer
+          nullable: true
+        lawsuit_category_id:
+          type: integer
+        created_at:
+          type: string
+        updated_at:
+          type: string
+    LawsuitCategoryData:
       type: object
       properties:
         id:
@@ -441,6 +608,45 @@ components:
           type: string
         whats_app:
           type: string
+    LawsuitCategoryRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        color:
+          type: string
+    LawsuitRequest:
+      type: object
+      properties:
+        plot:
+          type: string
+        opponent:
+          type: string
+        rating:
+          type: integer
+        contract_number:
+          type: string
+          nullable: true
+        contract_signing_date:
+          type: string
+          nullable: true
+        contract_validity:
+          type: string
+          nullable: true
+        power_of_attorney:
+          type: string
+          nullable: true
+        power_of_attorney_signing_date:
+          type: string
+          nullable: true
+        power_of_attorney_validity:
+          type: string
+          nullable: true
+        customer_id:
+          type: integer
+          nullable: true
+        lawsuit_category_id:
+          type: integer
     UserData:
       type: object
       properties:

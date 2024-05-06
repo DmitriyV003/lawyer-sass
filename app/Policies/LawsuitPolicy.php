@@ -35,6 +35,11 @@ class LawsuitPolicy
         return $this->checkUserAndModel($user, $lawsuit);
     }
 
+    public function authorities(User $user, Lawsuit $lawsuit): bool
+    {
+        return $this->checkUserAndModel($user, $lawsuit);
+    }
+
     private function checkUserAndModel(User $user, Lawsuit $lawsuit): bool
     {
         return $user->id === $lawsuit->user_id;

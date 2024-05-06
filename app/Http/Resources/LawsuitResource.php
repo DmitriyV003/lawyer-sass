@@ -26,6 +26,7 @@ class LawsuitResource extends JsonResource
             'customer' => new CustomerResource($this->whenLoaded('customer')),
             'lawsuit_category' => new LawsuitCategoryResource($this->whenLoaded('lawsuitCategory')),
             'authorities' => AuthorityResource::collection($this->whenLoaded('authorities')),
+            'authorities_count' => $this->whenCounted('authorities'),
         ];
     }
 }

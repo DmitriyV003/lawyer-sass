@@ -22,9 +22,9 @@ return new class extends Migration
             $table->string('power_of_attorney')->nullable();
             $table->dateTime('power_of_attorney_signing_date')->nullable();
             $table->dateTime('power_of_attorney_validity')->nullable();
-            $table->foreignIdFor(Customer::class)->nullable();
-            $table->foreignIdFor(LawsuitCategory::class);
-            $table->foreignIdFor(User::class);
+            $table->foreignIdFor(Customer::class)->nullable()->references('id')->on('customers');
+            $table->foreignIdFor(LawsuitCategory::class)->references('id')->on('lawsuit_categories');
+            $table->foreignIdFor(User::class)->references('id')->on('users');
             $table->softDeletes();
             $table->timestamps();
         });
