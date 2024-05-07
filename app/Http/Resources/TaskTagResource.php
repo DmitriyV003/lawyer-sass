@@ -5,8 +5,8 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-/** @mixin \App\Models\LawsuitCategory */
-class LawsuitCategoryResource extends JsonResource
+/** @mixin \App\Models\TaskTag */
+class TaskTagResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
@@ -14,8 +14,6 @@ class LawsuitCategoryResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'color' => $this->color,
-            'notify_before_hours' => $this->notify_before_hours,
-            'mark_before_days' => $this->mark_before_days,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

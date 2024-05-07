@@ -2,8 +2,10 @@
 
 namespace App\Services;
 
+use App\Exceptions\ServiceException;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Symfony\Component\HttpFoundation\Response;
 
 class UserService
 {
@@ -33,6 +35,16 @@ class UserService
         $user->save();
     }
 
+    public function updatePassword(array $params): void
+    {
+        if (!Hash::check($params['password'], $this->user->password)) {
+            throw new ServiceException('Неверный пароль', Response::HTTP_UNPROCESSABLE_ENTITY);
+        }
+
+        $this->user->password = Hash::make($params['new_password']);
+        $this->user->save();
+    }
+
     public function update(array $params): User
     {
         $this->user->update($params);
@@ -42,6 +54,8 @@ class UserService
 
     public function delete(): void
     {
+        $this->user->is_active = false;
+        $this->user->save();
         $this->user->delete();
     }
 }
