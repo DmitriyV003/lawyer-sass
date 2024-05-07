@@ -66,6 +66,11 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(LawsuitCategory::class);
     }
 
+    public function taskTags(): HasMany
+    {
+        return $this->hasMany(TaskTag::class);
+    }
+
     public function getJWTIdentifier()
     {
         return $this->getKey();

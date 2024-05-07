@@ -8,6 +8,7 @@ use App\Http\Controllers\LawsuitCategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LawsuitController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\TaskTagController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,9 +29,12 @@ Route::prefix('/v1')->group(function () {
         Route::prefix('/auth')->group(function () {
             Route::post('/logout', [AuthController::class, 'logout']);
         });
-        Route::get('/user', [UserController::class, 'user']);
-        Route::delete('/user', [UserController::class, 'destroy']);
-        Route::put('/user', [UserController::class, 'update']);
+        Route::prefix('/user')->group(function () {
+            Route::get('/', [UserController::class, 'user']);
+            Route::delete('/', [UserController::class, 'destroy']);
+            Route::put('/', [UserController::class, 'update']);
+            Route::put('/update-password', [UserController::class, 'updatePassword']);
+        });
         Route::apiResource('customer', CustomerController::class)
             ->only('index', 'show', 'store', 'destroy', 'update');
         Route::apiResource('lawsuit-category', LawsuitCategoryController::class)
@@ -40,5 +44,7 @@ Route::prefix('/v1')->group(function () {
         Route::get('/lawsuit/{lawsuit}/authorities', [LawsuitController::class, 'authorities']);
         Route::apiResource('authority', AuthorityController::class)
             ->only('show', 'store', 'destroy', 'update');
+        Route::apiResource('task-tag', TaskTagController::class)
+            ->only('index', 'show', 'store', 'destroy', 'update');
     });
 });

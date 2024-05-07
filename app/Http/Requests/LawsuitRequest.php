@@ -10,12 +10,12 @@ class LawsuitRequest extends BaseRequest
     {
         return [
             'plot' => 'required',
-            'opponent' => 'required',
+            'opponent' => 'required|max:255',
             'rating' => 'required|integer',
-            'contract_number' => 'nullable',
+            'contract_number' => 'nullable|max:255',
             'contract_signing_date' => 'nullable|date',
             'contract_validity' => 'nullable|date',
-            'power_of_attorney' => 'nullable',
+            'power_of_attorney' => 'nullable|max:255',
             'power_of_attorney_signing_date' => 'nullable|date',
             'power_of_attorney_validity' => 'nullable|date',
             'customer_id' => [

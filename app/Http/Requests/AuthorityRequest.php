@@ -23,9 +23,4 @@ class AuthorityRequest extends BaseRequest
             ],
         ];
     }
-
-    public function authorize(): bool
-    {
-        return true;
-    }
 }
