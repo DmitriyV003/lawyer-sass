@@ -35,7 +35,9 @@ class CustomerController extends Controller
     {
         $this->authorize('view', $customer);
 
-        return api_response(new CustomerResource($customer));
+        return api_response(
+            new CustomerResource($customer->load(['lawsuits'])),
+        );
     }
 
     public function update(CustomerRequest $request, Customer $customer)

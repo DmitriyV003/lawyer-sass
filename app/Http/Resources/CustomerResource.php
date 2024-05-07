@@ -21,6 +21,7 @@ class CustomerResource extends JsonResource
             'deleted_at' => $this->deleted_at,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'lawsuits' => LawsuitResource::collection($this->whenLoaded('lawsuits')),
         ];
     }
 }

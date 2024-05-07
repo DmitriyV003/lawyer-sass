@@ -13,11 +13,11 @@ class LawsuitRequest extends BaseRequest
             'opponent' => 'required|max:255',
             'rating' => 'required|integer',
             'contract_number' => 'nullable|max:255',
-            'contract_signing_date' => 'nullable|date',
-            'contract_validity' => 'nullable|date',
+            'contract_signing_date' => 'nullable|date|required_with:contract_number',
+            'contract_validity' => 'nullable|date|required_with:contract_number',
             'power_of_attorney' => 'nullable|max:255',
-            'power_of_attorney_signing_date' => 'nullable|date',
-            'power_of_attorney_validity' => 'nullable|date',
+            'power_of_attorney_signing_date' => 'nullable|date|required_with:power_of_attorney',
+            'power_of_attorney_validity' => 'nullable|date|required_with:power_of_attorney',
             'customer_id' => [
                 'nullable',
                 Rule::exists('customers', 'id')->where(function ($query) {
