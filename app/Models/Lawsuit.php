@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -26,6 +27,59 @@ class Lawsuit extends Model
         'user_id',
     ];
 
+    protected function casts()
+    {
+        return [
+            'contract_signing_date' => 'datetime',
+            'contract_validity' => 'datetime',
+            'power_of_attorney_signing_date' => 'datetime',
+            'power_of_attorney_validity' => 'datetime',
+        ];
+    }
+
+    protected $appends = [
+        'contract_end_months',
+        'contract_end_days',
+        'power_of_attorney_end_months',
+        'power_of_attorney_end_days',
+    ];
+
+    public function contractEndMonths(): Attribute
+    {
+        return Attribute::make(
+            get: function ($value) {
+                return round($this->getContractValidityDateInterval()?->diffInMonths());
+            },
+        );
+    }
+
+    public function contractEndDays(): Attribute
+    {
+        return Attribute::make(
+            get: function ($value) {
+                return round($this->getContractValidityDateInterval()?->diffInDays());
+            },
+        );
+    }
+
+    public function PowerOfAttorneyEndMonths(): Attribute
+    {
+        return Attribute::make(
+            get: function ($value) {
+                return round($this->getContractValidityDateInterval()?->diffInMonths());
+            },
+        );
+    }
+
+    public function PowerOfAttorneyEndDays(): Attribute
+    {
+        return Attribute::make(
+            get: function ($value) {
+                return round($this->getContractValidityDateInterval()?->diffInDays());
+            },
+        );
+    }
+
     public function customer(): BelongsTo
     {
         return $this->belongsTo(Customer::class);
@@ -46,13 +100,26 @@ class Lawsuit extends Model
         return $this->hasMany(Authority::class);
     }
 
-    protected function casts()
+    public function lawsuitEvents(): HasMany
     {
-        return [
-            'contract_signing_date' => 'datetime',
-            'contract_validity' => 'datetime',
-            'power_of_attorney_signing_date' => 'datetime',
-            'power_of_attorney_validity' => 'datetime',
-        ];
+        return $this->hasMany(LawsuitEvent::class);
+    }
+
+    private function getContractValidityDateInterval()
+    {
+        if ($this->contract_validity && $this->contract_signing_date) {
+            return $this->contract_validity->subtract($this->contract_signing_date);
+        }
+
+        return null;
+    }
+
+    private function getPowerOfAttorneyValidityDateInterval()
+    {
+        if ($this->power_of_attorney_validity && $this->power_of_attorney_signing_date) {
+            return $this->power_of_attorney_validity->subtract($this->power_of_attorney_signing_date);
+        }
+
+        return null;
     }
 }
