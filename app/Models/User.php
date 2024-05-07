@@ -31,6 +31,9 @@ class User extends Authenticatable implements JWTSubject
         'is_active',
         'login_attempts',
         'password',
+        'start_working_time',
+        'end_working_time',
+        'working_time_interval',
     ];
 
     protected $hidden = [
@@ -41,6 +44,9 @@ class User extends Authenticatable implements JWTSubject
     protected $attributes = [
         'is_active' => true,
         'login_attempts' => 0,
+        'start_working_time' => '09:00',
+        'end_working_time' => '18:00',
+        'working_time_interval' => 15,
     ];
 
     protected function casts(): array
