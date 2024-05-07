@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Http\Controllers\LawsuitEventCategoryController;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -69,6 +70,11 @@ class User extends Authenticatable implements JWTSubject
     public function taskTags(): HasMany
     {
         return $this->hasMany(TaskTag::class);
+    }
+
+    public function lawsuitEventCategories(): HasMany
+    {
+        return $this->hasMany(LawsuitEventCategoryController::class);
     }
 
     public function getJWTIdentifier()

@@ -9,10 +9,12 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('task_tags', function (Blueprint $table) {
+        Schema::create('lawsuit_event_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('color');
+            $table->integer('notify_before_hours')->nullable();
+            $table->integer('mark_before_days')->nullable();
             $table->foreignIdFor(User::class)->references('id')->on('users');
             $table->timestamps();
         });
@@ -20,6 +22,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('task_tags');
+        Schema::dropIfExists('lawsuit_event_categories');
     }
 };

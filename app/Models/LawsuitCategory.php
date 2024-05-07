@@ -4,12 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class LawsuitCategory extends Model
 {
-    use SoftDeletes;
-
     protected $fillable = [
         'name',
         'color',
@@ -20,5 +19,15 @@ class LawsuitCategory extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function lawsuits(): HasMany
+    {
+        return $this->hasMany(Lawsuit::class);
+    }
+
+    public function isDeletable(): bool
+    {
+        return !$this->lawsuits()->first();
     }
 }

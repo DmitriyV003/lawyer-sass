@@ -4,13 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class TaskTag extends Model
+class LawsuitEventCategory extends Model
 {
     protected $fillable = [
         'name',
         'color',
+        'notify_before_hours',
+        'mark_before_days',
         'user_id',
     ];
 

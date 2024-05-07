@@ -16,7 +16,6 @@ return new class extends Migration
             $table->integer('notify_before_hours')->nullable();
             $table->integer('mark_before_days')->nullable();
             $table->foreignIdFor(User::class)->references('id')->on('users');
-            $table->softDeletes();
             $table->timestamps();
         });
     }
