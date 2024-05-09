@@ -1012,7 +1012,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{baseUrl}}/api/v1/lawsuit",
+							"raw": "{{baseUrl}}/api/v1/lawsuit?opponent_sort=asc&items_per_page=5",
 							"host": [
 								"{{baseUrl}}"
 							],
@@ -1020,6 +1020,29 @@
 								"api",
 								"v1",
 								"lawsuit"
+							],
+							"query": [
+								{
+									"key": "upcoming_event_sort",
+									"value": "asc",
+									"description": "asc, desc",
+									"disabled": true
+								},
+								{
+									"key": "rating_sort",
+									"value": "asc",
+									"description": "asc, desc",
+									"disabled": true
+								},
+								{
+									"key": "opponent_sort",
+									"value": "asc",
+									"description": "asc, desc"
+								},
+								{
+									"key": "items_per_page",
+									"value": "5"
+								}
 							]
 						}
 					},
@@ -1103,6 +1126,20 @@
 										"api",
 										"v1",
 										"lawsuit"
+									],
+									"query": [
+										{
+											"key": "upcoming_event_sort",
+											"value": "asc",
+											"description": "asc, desc",
+											"disabled": true
+										},
+										{
+											"key": "rating_sort",
+											"value": "asc",
+											"description": "asc, desc",
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -1140,7 +1177,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 06 May 2024 06:40:15 GMT"
+									"value": "Wed, 08 May 2024 21:33:27 GMT"
 								},
 								{
 									"key": "Access-Control-Allow-Origin",
@@ -1148,7 +1185,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"plot\": \"sdv\",\n            \"opponent\": \"dvfd\",\n            \"rating\": 3,\n            \"contract_number\": null,\n            \"contract_signing_date\": null,\n            \"contract_validity\": null,\n            \"power_of_attorney\": null,\n            \"power_of_attorney_signing_date\": null,\n            \"power_of_attorney_validity\": null,\n            \"created_at\": \"2024-05-06T09:36:52.000000Z\",\n            \"updated_at\": null,\n            \"customer\": {\n                \"id\": 1,\n                \"name\": \"dg\",\n                \"telegram\": \"+79859631245\",\n                \"whats_app\": \"+79859631245\",\n                \"phone\": \"+79859631245\",\n                \"email\": \"sefregtre@mail.com\",\n                \"last_active_at\": null,\n                \"deleted_at\": null,\n                \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                \"updated_at\": null\n            },\n            \"lawsuit_category\": {\n                \"id\": 1,\n                \"name\": \"dfg\",\n                \"color\": \"gdfgd\",\n                \"created_at\": \"2024-05-06T09:36:29.000000Z\",\n                \"updated_at\": null\n            },\n            \"authorities\": []\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://localhost:8085/api/v1/lawsuit?page=1\",\n        \"last\": \"http://localhost:8085/api/v1/lawsuit?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8085/api/v1/lawsuit?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://localhost:8085/api/v1/lawsuit\",\n        \"per_page\": 20,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 4,\n            \"plot\": \"very long description\",\n            \"opponent\": \"opponent\",\n            \"rating\": 2,\n            \"contract_number\": \"12df\",\n            \"contract_signing_date\": null,\n            \"contract_validity\": null,\n            \"power_of_attorney\": \"fddg\",\n            \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n            \"contract_end_months\": 0,\n            \"contract_end_days\": 0,\n            \"power_of_attorney_end_months\": 0,\n            \"power_of_attorney_end_days\": 0,\n            \"created_at\": \"2024-05-06T06:53:07.000000Z\",\n            \"updated_at\": \"2024-05-06T06:53:07.000000Z\",\n            \"customer\": {\n                \"id\": 1,\n                \"name\": \"dg\",\n                \"telegram\": \"+79859631245\",\n                \"whats_app\": \"+79859631245\",\n                \"phone\": \"+79859631245\",\n                \"email\": \"sefregtre@mail.com\",\n                \"last_active_at\": null,\n                \"deleted_at\": null,\n                \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                \"updated_at\": null\n            },\n            \"lawsuit_category\": {\n                \"id\": 1,\n                \"name\": \"dfg\",\n                \"color\": \"gdfgd\",\n                \"notify_before_hours\": null,\n                \"mark_before_days\": null,\n                \"created_at\": \"2024-05-06T09:36:29.000000Z\",\n                \"updated_at\": null\n            },\n            \"authorities\": [],\n            \"lawsuit_events\": [\n                {\n                    \"id\": 4,\n                    \"theme\": \"theme\",\n                    \"is_important\": true,\n                    \"since\": \"2024-05-09T09:00:00.000000Z\",\n                    \"till\": null,\n                    \"cost\": null,\n                    \"place\": \"place\",\n                    \"comment\": null,\n                    \"remain_days\": 0,\n                    \"created_at\": \"2024-05-08T18:33:59.000000Z\",\n                    \"updated_at\": \"2024-05-08T18:33:59.000000Z\"\n                }\n            ],\n            \"lawsuit_events_count\": 1\n        },\n        {\n            \"id\": 3,\n            \"plot\": \"very long description\",\n            \"opponent\": \"opponent\",\n            \"rating\": 2,\n            \"contract_number\": \"12df\",\n            \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n            \"contract_validity\": \"2020-09-25T00:00:00.000000Z\",\n            \"power_of_attorney\": \"fddg\",\n            \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n            \"contract_end_months\": 289,\n            \"contract_end_days\": 8811,\n            \"power_of_attorney_end_months\": 289,\n            \"power_of_attorney_end_days\": 8811,\n            \"created_at\": \"2024-05-06T06:52:53.000000Z\",\n            \"updated_at\": \"2024-05-06T06:52:53.000000Z\",\n            \"customer\": {\n                \"id\": 1,\n                \"name\": \"dg\",\n                \"telegram\": \"+79859631245\",\n                \"whats_app\": \"+79859631245\",\n                \"phone\": \"+79859631245\",\n                \"email\": \"sefregtre@mail.com\",\n                \"last_active_at\": null,\n                \"deleted_at\": null,\n                \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                \"updated_at\": null\n            },\n            \"lawsuit_category\": {\n                \"id\": 1,\n                \"name\": \"dfg\",\n                \"color\": \"gdfgd\",\n                \"notify_before_hours\": null,\n                \"mark_before_days\": null,\n                \"created_at\": \"2024-05-06T09:36:29.000000Z\",\n                \"updated_at\": null\n            },\n            \"authorities\": [\n                {\n                    \"created_at\": null,\n                    \"updated_at\": null,\n                    \"id\": 1,\n                    \"lawsuit_number\": \"fesfet4\",\n                    \"lawsuit_number_link\": null,\n                    \"authority\": \"sgrsdgresg\",\n                    \"judge\": \"rgdfg\",\n                    \"cabinet\": \"rgrge\",\n                    \"comment\": null,\n                    \"lawsuit_id\": 3\n                }\n            ],\n            \"lawsuit_events\": [\n                {\n                    \"id\": 3,\n                    \"theme\": \"theme\",\n                    \"is_important\": true,\n                    \"since\": \"2024-06-05T09:00:00.000000Z\",\n                    \"till\": null,\n                    \"cost\": null,\n                    \"place\": \"place\",\n                    \"comment\": null,\n                    \"remain_days\": 27,\n                    \"created_at\": \"2024-05-08T18:33:44.000000Z\",\n                    \"updated_at\": \"2024-05-08T18:33:44.000000Z\"\n                }\n            ],\n            \"lawsuit_events_count\": 7\n        },\n        {\n            \"id\": 8,\n            \"plot\": \"very long description\",\n            \"opponent\": \"opponent\",\n            \"rating\": 2,\n            \"contract_number\": \"12df\",\n            \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n            \"contract_validity\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney\": \"fddg\",\n            \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n            \"contract_end_months\": 289,\n            \"contract_end_days\": 8811,\n            \"power_of_attorney_end_months\": 289,\n            \"power_of_attorney_end_days\": 8811,\n            \"created_at\": \"2024-05-06T06:55:41.000000Z\",\n            \"updated_at\": \"2024-05-06T06:55:41.000000Z\",\n            \"customer\": {\n                \"id\": 1,\n                \"name\": \"dg\",\n                \"telegram\": \"+79859631245\",\n                \"whats_app\": \"+79859631245\",\n                \"phone\": \"+79859631245\",\n                \"email\": \"sefregtre@mail.com\",\n                \"last_active_at\": null,\n                \"deleted_at\": null,\n                \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                \"updated_at\": null\n            },\n            \"lawsuit_category\": {\n                \"id\": 1,\n                \"name\": \"dfg\",\n                \"color\": \"gdfgd\",\n                \"notify_before_hours\": null,\n                \"mark_before_days\": null,\n                \"created_at\": \"2024-05-06T09:36:29.000000Z\",\n                \"updated_at\": null\n            },\n            \"authorities\": [],\n            \"lawsuit_events\": [],\n            \"lawsuit_events_count\": 0\n        },\n        {\n            \"id\": 9,\n            \"plot\": \"very long description\",\n            \"opponent\": \"opponent\",\n            \"rating\": 2,\n            \"contract_number\": \"12df\",\n            \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n            \"contract_validity\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney\": \"fddg\",\n            \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n            \"contract_end_months\": 289,\n            \"contract_end_days\": 8811,\n            \"power_of_attorney_end_months\": 289,\n            \"power_of_attorney_end_days\": 8811,\n            \"created_at\": \"2024-05-06T06:55:55.000000Z\",\n            \"updated_at\": \"2024-05-06T06:55:55.000000Z\",\n            \"customer\": {\n                \"id\": 1,\n                \"name\": \"dg\",\n                \"telegram\": \"+79859631245\",\n                \"whats_app\": \"+79859631245\",\n                \"phone\": \"+79859631245\",\n                \"email\": \"sefregtre@mail.com\",\n                \"last_active_at\": null,\n                \"deleted_at\": null,\n                \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                \"updated_at\": null\n            },\n            \"lawsuit_category\": {\n                \"id\": 1,\n                \"name\": \"dfg\",\n                \"color\": \"gdfgd\",\n                \"notify_before_hours\": null,\n                \"mark_before_days\": null,\n                \"created_at\": \"2024-05-06T09:36:29.000000Z\",\n                \"updated_at\": null\n            },\n            \"authorities\": [],\n            \"lawsuit_events\": [],\n            \"lawsuit_events_count\": 0\n        },\n        {\n            \"id\": 10,\n            \"plot\": \"very long description\",\n            \"opponent\": \"opponent\",\n            \"rating\": 2,\n            \"contract_number\": \"12df\",\n            \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n            \"contract_validity\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney\": \"fddg\",\n            \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n            \"contract_end_months\": 289,\n            \"contract_end_days\": 8811,\n            \"power_of_attorney_end_months\": 289,\n            \"power_of_attorney_end_days\": 8811,\n            \"created_at\": \"2024-05-06T06:56:42.000000Z\",\n            \"updated_at\": \"2024-05-06T06:56:42.000000Z\",\n            \"customer\": {\n                \"id\": 1,\n                \"name\": \"dg\",\n                \"telegram\": \"+79859631245\",\n                \"whats_app\": \"+79859631245\",\n                \"phone\": \"+79859631245\",\n                \"email\": \"sefregtre@mail.com\",\n                \"last_active_at\": null,\n                \"deleted_at\": null,\n                \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                \"updated_at\": null\n            },\n            \"lawsuit_category\": {\n                \"id\": 1,\n                \"name\": \"dfg\",\n                \"color\": \"gdfgd\",\n                \"notify_before_hours\": null,\n                \"mark_before_days\": null,\n                \"created_at\": \"2024-05-06T09:36:29.000000Z\",\n                \"updated_at\": null\n            },\n            \"authorities\": [],\n            \"lawsuit_events\": [],\n            \"lawsuit_events_count\": 0\n        },\n        {\n            \"id\": 11,\n            \"plot\": \"very long description\",\n            \"opponent\": \"opponent\",\n            \"rating\": 2,\n            \"contract_number\": \"12df\",\n            \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n            \"contract_validity\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney\": \"fddg\",\n            \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n            \"contract_end_months\": 289,\n            \"contract_end_days\": 8811,\n            \"power_of_attorney_end_months\": 289,\n            \"power_of_attorney_end_days\": 8811,\n            \"created_at\": \"2024-05-06T06:57:21.000000Z\",\n            \"updated_at\": \"2024-05-06T06:57:21.000000Z\",\n            \"customer\": {\n                \"id\": 1,\n                \"name\": \"dg\",\n                \"telegram\": \"+79859631245\",\n                \"whats_app\": \"+79859631245\",\n                \"phone\": \"+79859631245\",\n                \"email\": \"sefregtre@mail.com\",\n                \"last_active_at\": null,\n                \"deleted_at\": null,\n                \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                \"updated_at\": null\n            },\n            \"lawsuit_category\": {\n                \"id\": 1,\n                \"name\": \"dfg\",\n                \"color\": \"gdfgd\",\n                \"notify_before_hours\": null,\n                \"mark_before_days\": null,\n                \"created_at\": \"2024-05-06T09:36:29.000000Z\",\n                \"updated_at\": null\n            },\n            \"authorities\": [],\n            \"lawsuit_events\": [],\n            \"lawsuit_events_count\": 0\n        },\n        {\n            \"id\": 5,\n            \"plot\": \"very long description\",\n            \"opponent\": \"opponent\",\n            \"rating\": 2,\n            \"contract_number\": \"12df\",\n            \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n            \"contract_validity\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney\": \"fddg\",\n            \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n            \"contract_end_months\": 289,\n            \"contract_end_days\": 8811,\n            \"power_of_attorney_end_months\": 289,\n            \"power_of_attorney_end_days\": 8811,\n            \"created_at\": \"2024-05-06T06:54:35.000000Z\",\n            \"updated_at\": \"2024-05-06T06:54:35.000000Z\",\n            \"customer\": {\n                \"id\": 1,\n                \"name\": \"dg\",\n                \"telegram\": \"+79859631245\",\n                \"whats_app\": \"+79859631245\",\n                \"phone\": \"+79859631245\",\n                \"email\": \"sefregtre@mail.com\",\n                \"last_active_at\": null,\n                \"deleted_at\": null,\n                \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                \"updated_at\": null\n            },\n            \"lawsuit_category\": {\n                \"id\": 1,\n                \"name\": \"dfg\",\n                \"color\": \"gdfgd\",\n                \"notify_before_hours\": null,\n                \"mark_before_days\": null,\n                \"created_at\": \"2024-05-06T09:36:29.000000Z\",\n                \"updated_at\": null\n            },\n            \"authorities\": [],\n            \"lawsuit_events\": [],\n            \"lawsuit_events_count\": 0\n        },\n        {\n            \"id\": 13,\n            \"plot\": \"very long description\",\n            \"opponent\": \"opponent\",\n            \"rating\": 2,\n            \"contract_number\": \"12df\",\n            \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n            \"contract_validity\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney\": \"fddg\",\n            \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n            \"contract_end_months\": 289,\n            \"contract_end_days\": 8811,\n            \"power_of_attorney_end_months\": 289,\n            \"power_of_attorney_end_days\": 8811,\n            \"created_at\": \"2024-05-06T06:58:03.000000Z\",\n            \"updated_at\": \"2024-05-06T06:58:03.000000Z\",\n            \"customer\": {\n                \"id\": 1,\n                \"name\": \"dg\",\n                \"telegram\": \"+79859631245\",\n                \"whats_app\": \"+79859631245\",\n                \"phone\": \"+79859631245\",\n                \"email\": \"sefregtre@mail.com\",\n                \"last_active_at\": null,\n                \"deleted_at\": null,\n                \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                \"updated_at\": null\n            },\n            \"lawsuit_category\": {\n                \"id\": 1,\n                \"name\": \"dfg\",\n                \"color\": \"gdfgd\",\n                \"notify_before_hours\": null,\n                \"mark_before_days\": null,\n                \"created_at\": \"2024-05-06T09:36:29.000000Z\",\n                \"updated_at\": null\n            },\n            \"authorities\": [],\n            \"lawsuit_events\": [],\n            \"lawsuit_events_count\": 0\n        },\n        {\n            \"id\": 2,\n            \"plot\": \"very long description1\",\n            \"opponent\": \"opponent\",\n            \"rating\": 2,\n            \"contract_number\": \"12df\",\n            \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n            \"contract_validity\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney\": \"fddg\",\n            \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n            \"contract_end_months\": 289,\n            \"contract_end_days\": 8811,\n            \"power_of_attorney_end_months\": 289,\n            \"power_of_attorney_end_days\": 8811,\n            \"created_at\": \"2024-05-06T06:51:47.000000Z\",\n            \"updated_at\": \"2024-05-06T06:59:53.000000Z\",\n            \"customer\": {\n                \"id\": 1,\n                \"name\": \"dg\",\n                \"telegram\": \"+79859631245\",\n                \"whats_app\": \"+79859631245\",\n                \"phone\": \"+79859631245\",\n                \"email\": \"sefregtre@mail.com\",\n                \"last_active_at\": null,\n                \"deleted_at\": null,\n                \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                \"updated_at\": null\n            },\n            \"lawsuit_category\": {\n                \"id\": 1,\n                \"name\": \"dfg\",\n                \"color\": \"gdfgd\",\n                \"notify_before_hours\": null,\n                \"mark_before_days\": null,\n                \"created_at\": \"2024-05-06T09:36:29.000000Z\",\n                \"updated_at\": null\n            },\n            \"authorities\": [],\n            \"lawsuit_events\": [],\n            \"lawsuit_events_count\": 0\n        },\n        {\n            \"id\": 6,\n            \"plot\": \"very long description\",\n            \"opponent\": \"opponent\",\n            \"rating\": 2,\n            \"contract_number\": \"12df\",\n            \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n            \"contract_validity\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney\": \"fddg\",\n            \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n            \"contract_end_months\": 289,\n            \"contract_end_days\": 8811,\n            \"power_of_attorney_end_months\": 289,\n            \"power_of_attorney_end_days\": 8811,\n            \"created_at\": \"2024-05-06T06:54:49.000000Z\",\n            \"updated_at\": \"2024-05-06T06:54:49.000000Z\",\n            \"customer\": {\n                \"id\": 1,\n                \"name\": \"dg\",\n                \"telegram\": \"+79859631245\",\n                \"whats_app\": \"+79859631245\",\n                \"phone\": \"+79859631245\",\n                \"email\": \"sefregtre@mail.com\",\n                \"last_active_at\": null,\n                \"deleted_at\": null,\n                \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                \"updated_at\": null\n            },\n            \"lawsuit_category\": {\n                \"id\": 2,\n                \"name\": \"cat name\",\n                \"color\": \"#000000\",\n                \"notify_before_hours\": null,\n                \"mark_before_days\": null,\n                \"created_at\": \"2024-05-07T12:40:42.000000Z\",\n                \"updated_at\": \"2024-05-07T12:40:42.000000Z\"\n            },\n            \"authorities\": [],\n            \"lawsuit_events\": [],\n            \"lawsuit_events_count\": 0\n        },\n        {\n            \"id\": 12,\n            \"plot\": \"very long description\",\n            \"opponent\": \"opponent\",\n            \"rating\": 2,\n            \"contract_number\": \"12df\",\n            \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n            \"contract_validity\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney\": \"fddg\",\n            \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n            \"contract_end_months\": 289,\n            \"contract_end_days\": 8811,\n            \"power_of_attorney_end_months\": 289,\n            \"power_of_attorney_end_days\": 8811,\n            \"created_at\": \"2024-05-06T06:57:37.000000Z\",\n            \"updated_at\": \"2024-05-06T06:57:37.000000Z\",\n            \"customer\": {\n                \"id\": 1,\n                \"name\": \"dg\",\n                \"telegram\": \"+79859631245\",\n                \"whats_app\": \"+79859631245\",\n                \"phone\": \"+79859631245\",\n                \"email\": \"sefregtre@mail.com\",\n                \"last_active_at\": null,\n                \"deleted_at\": null,\n                \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                \"updated_at\": null\n            },\n            \"lawsuit_category\": {\n                \"id\": 1,\n                \"name\": \"dfg\",\n                \"color\": \"gdfgd\",\n                \"notify_before_hours\": null,\n                \"mark_before_days\": null,\n                \"created_at\": \"2024-05-06T09:36:29.000000Z\",\n                \"updated_at\": null\n            },\n            \"authorities\": [],\n            \"lawsuit_events\": [],\n            \"lawsuit_events_count\": 0\n        },\n        {\n            \"id\": 7,\n            \"plot\": \"very long description\",\n            \"opponent\": \"opponent\",\n            \"rating\": 2,\n            \"contract_number\": \"12df\",\n            \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n            \"contract_validity\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney\": \"fddg\",\n            \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n            \"contract_end_months\": 289,\n            \"contract_end_days\": 8811,\n            \"power_of_attorney_end_months\": 289,\n            \"power_of_attorney_end_days\": 8811,\n            \"created_at\": \"2024-05-06T06:55:34.000000Z\",\n            \"updated_at\": \"2024-05-06T06:55:34.000000Z\",\n            \"customer\": {\n                \"id\": 1,\n                \"name\": \"dg\",\n                \"telegram\": \"+79859631245\",\n                \"whats_app\": \"+79859631245\",\n                \"phone\": \"+79859631245\",\n                \"email\": \"sefregtre@mail.com\",\n                \"last_active_at\": null,\n                \"deleted_at\": null,\n                \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                \"updated_at\": null\n            },\n            \"lawsuit_category\": {\n                \"id\": 1,\n                \"name\": \"dfg\",\n                \"color\": \"gdfgd\",\n                \"notify_before_hours\": null,\n                \"mark_before_days\": null,\n                \"created_at\": \"2024-05-06T09:36:29.000000Z\",\n                \"updated_at\": null\n            },\n            \"authorities\": [],\n            \"lawsuit_events\": [],\n            \"lawsuit_events_count\": 0\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://localhost:8085/api/v1/lawsuit?page=1\",\n        \"last\": \"http://localhost:8085/api/v1/lawsuit?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8085/api/v1/lawsuit?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://localhost:8085/api/v1/lawsuit\",\n        \"per_page\": 20,\n        \"to\": 12,\n        \"total\": 12\n    }\n}"
 						}
 					]
 				},
@@ -1720,7 +1757,7 @@
 									"variable": [
 										{
 											"key": "id",
-											"value": "",
+											"value": "2",
 											"description": "(Required) "
 										}
 									]
@@ -1760,7 +1797,7 @@
 								},
 								{
 									"key": "Date",
-									"value": "Mon, 06 May 2024 06:41:18 GMT"
+									"value": "Tue, 07 May 2024 19:07:57 GMT"
 								},
 								{
 									"key": "Access-Control-Allow-Origin",
@@ -1768,7 +1805,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"success\": 1,\n    \"data\": {\n        \"id\": 1,\n        \"plot\": \"sdv\",\n        \"opponent\": \"dvfd\",\n        \"rating\": 3,\n        \"contract_number\": null,\n        \"contract_signing_date\": null,\n        \"contract_validity\": null,\n        \"power_of_attorney\": null,\n        \"power_of_attorney_signing_date\": null,\n        \"power_of_attorney_validity\": null,\n        \"customer_id\": 1,\n        \"lawsuit_category_id\": 1,\n        \"user_id\": 1,\n        \"deleted_at\": null,\n        \"created_at\": \"2024-05-06T09:36:52.000000Z\",\n        \"updated_at\": null,\n        \"authorities_count\": 0,\n        \"lawsuit_category\": {\n            \"id\": 1,\n            \"name\": \"dfg\",\n            \"color\": \"gdfgd\",\n            \"user_id\": 1,\n            \"deleted_at\": null,\n            \"created_at\": \"2024-05-06T09:36:29.000000Z\",\n            \"updated_at\": null\n        },\n        \"customer\": {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"name\": \"dg\",\n            \"telegram\": \"+79859631245\",\n            \"whats_app\": \"+79859631245\",\n            \"phone\": \"+79859631245\",\n            \"email\": \"sefregtre@mail.com\",\n            \"last_active_at\": null,\n            \"deleted_at\": null,\n            \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    \"error\": null\n}"
+							"body": "{\n    \"success\": 1,\n    \"data\": {\n        \"id\": 2,\n        \"plot\": \"very long description1\",\n        \"opponent\": \"opponent\",\n        \"rating\": 2,\n        \"contract_number\": \"12df\",\n        \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n        \"contract_validity\": \"2020-03-25T00:00:00.000000Z\",\n        \"power_of_attorney\": \"fddg\",\n        \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n        \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n        \"customer_id\": 1,\n        \"lawsuit_category_id\": 1,\n        \"user_id\": 1,\n        \"deleted_at\": null,\n        \"created_at\": \"2024-05-06T06:51:47.000000Z\",\n        \"updated_at\": \"2024-05-06T06:59:53.000000Z\",\n        \"authorities_count\": 0,\n        \"contract_end_months\": 289,\n        \"contract_end_days\": 8810,\n        \"power_of_attorney_end_months\": 289,\n        \"power_of_attorney_end_days\": 8810,\n        \"lawsuit_category\": {\n            \"id\": 1,\n            \"name\": \"dfg\",\n            \"color\": \"gdfgd\",\n            \"user_id\": 1,\n            \"deleted_at\": \"2024-05-07 15:17:06\",\n            \"created_at\": \"2024-05-06T09:36:29.000000Z\",\n            \"updated_at\": null\n        },\n        \"customer\": {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"name\": \"dg\",\n            \"telegram\": \"+79859631245\",\n            \"whats_app\": \"+79859631245\",\n            \"phone\": \"+79859631245\",\n            \"email\": \"sefregtre@mail.com\",\n            \"last_active_at\": null,\n            \"deleted_at\": null,\n            \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n            \"updated_at\": null\n        }\n    },\n    \"error\": null\n}"
 						}
 					]
 				},
@@ -3235,6 +3272,1862 @@
 			]
 		},
 		{
+			"name": "user",
+			"item": [
+				{
+					"name": "Получние залогиненого юзера",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Успешный ответ",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 May 2024 19:21:35 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 1,\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"New\",\n        \"lastname\": \"sdgfdg\",\n        \"surname\": null,\n        \"email\": \"example@mail.com\",\n        \"phone\": \"+79269369161\",\n        \"type\": \"advocate\",\n        \"start_working_time\": \"09:00:00\",\n        \"end_working_time\": \"18:00:00\",\n        \"working_time_interval\": 15,\n        \"roles\": [\n            \"advocate\"\n        ]\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Обновление профиля юзера",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"New\",\n    \"type\": \"advocate\",\n    \"lastname\": \"sdgfdg\",\n    \"surname\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Успешный ответ",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"New\",\n    \"type\": \"advocate\",\n    \"lastname\": \"sdgfdg\",\n    \"surname\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 May 2024 11:36:00 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 1,\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"New\",\n        \"lastname\": \"sdgfdg\",\n        \"surname\": null,\n        \"email\": \"example@mail.com\",\n        \"phone\": \"+79269369161\",\n        \"type\": \"advocate\",\n        \"is_active\": true,\n        \"login_attempts\": 0,\n        \"email_verified_at\": null,\n        \"created_at\": \"2024-05-05T19:12:20.000000Z\",\n        \"updated_at\": \"2024-05-07T11:36:00.000000Z\",\n        \"deleted_at\": null\n    },\n    \"error\": null\n}"
+						},
+						{
+							"name": "Ошибка валидации",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"New\",\n    \"type\": \"advocate\",\n    \"lastname\": \"\",\n    \"surname\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 May 2024 11:36:34 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 0,\n    \"data\": null,\n    \"error\": {\n        \"errors\": {\n            \"lastname\": [\n                \"The lastname field is required.\"\n            ]\n        },\n        \"message\": \"Ошибка валидации данных\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Обновление пароля юзера",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"secret13\",\n    \"new_password\": \"secret12\",\n    \"repeat_password\": \"secret12\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/user/update-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"update-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Ошибка валидации",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"New\",\n    \"type\": \"advocate\",\n    \"lastname\": \"\",\n    \"surname\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 May 2024 11:36:34 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 0,\n    \"data\": null,\n    \"error\": {\n        \"errors\": {\n            \"lastname\": [\n                \"The lastname field is required.\"\n            ]\n        },\n        \"message\": \"Ошибка валидации данных\"\n    }\n}"
+						},
+						{
+							"name": "Введен неверный пароль",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password\": \"secret12\",\n    \"new_password\": \"secret13\",\n    \"repeat_password\": \"secret13\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/user/update-password",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"update-password"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 May 2024 11:40:32 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 0,\n    \"data\": null,\n    \"error\": \"Неверный пароль\"\n}"
+						},
+						{
+							"name": "Успешный ответ",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password\": \"secret13\",\n    \"new_password\": \"secret12\",\n    \"repeat_password\": \"secret12\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/user/update-password",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user",
+										"update-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 May 2024 11:42:51 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 1,\n    \"data\": \"\",\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Удаление залогиненного юзера",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Успешный ответ",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/user",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 May 2024 11:32:26 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 1,\n    \"data\": \"\",\n    \"error\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "lawsuit-event",
+			"item": [
+				{
+					"name": "Создание ивента",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"theme\": \"theme\",\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 1,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/lawsuit-event",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lawsuit-event"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Клиенты в запросе и деле не совпадают",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"theme\": \"theme\",\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 2,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/lawsuit-event",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"lawsuit-event"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 May 2024 18:55:19 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Клиенты не совадают\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\HttpException\",\n    \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php\",\n    \"line\": 1356,\n    \"trace\": [\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php\",\n            \"line\": 47,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/app/Http/Controllers/LawsuitEventController.php\",\n            \"line\": 31,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Controller.php\",\n            \"line\": 54,\n            \"function\": \"store\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\LawsuitEventController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php\",\n            \"line\": 43,\n            \"function\": \"callAction\",\n            \"class\": \"Illuminate\\\\Routing\\\\Controller\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Route.php\",\n            \"line\": 260,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Route.php\",\n            \"line\": 206,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 806,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php\",\n            \"line\": 64,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Auth\\\\Middleware\\\\Authenticate\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 805,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 784,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 748,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 737,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php\",\n            \"line\": 200,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php\",\n            \"line\": 51,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php\",\n            \"line\": 110,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php\",\n            \"line\": 62,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php\",\n            \"line\": 57,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php\",\n            \"line\": 175,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php\",\n            \"line\": 144,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php\",\n            \"line\": 1172,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/public/index.php\",\n            \"line\": 17,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Ошибка валидации",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"theme\": null,\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 1,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/lawsuit-event",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"lawsuit-event"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 May 2024 19:04:30 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The theme field is required.\",\n    \"errors\": {\n        \"theme\": [\n            \"The theme field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Успешный ответ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"theme\": \"theme\",\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 1,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/lawsuit-event",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"lawsuit-event"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 May 2024 19:04:00 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 1,\n    \"data\": {\n        \"created_at\": \"2024-05-08T19:04:00.000000Z\",\n        \"updated_at\": \"2024-05-08T19:04:00.000000Z\",\n        \"id\": 10,\n        \"theme\": \"theme\",\n        \"is_important\": true,\n        \"since\": \"2024-06-05T07:25:00.000000Z\",\n        \"till\": \"2024-07-05T18:36:00.000000Z\",\n        \"cost\": null,\n        \"place\": \"place\",\n        \"comment\": null,\n        \"lawsuit_event_category_id\": 1,\n        \"customer_id\": null,\n        \"lawsuit_id\": 3,\n        \"lawsuit\": {\n            \"id\": 3,\n            \"plot\": \"very long description\",\n            \"opponent\": \"opponent\",\n            \"rating\": 2,\n            \"contract_number\": \"12df\",\n            \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n            \"contract_validity\": \"2020-09-25T00:00:00.000000Z\",\n            \"power_of_attorney\": \"fddg\",\n            \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n            \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n            \"contract_end_months\": 289,\n            \"contract_end_days\": 8811,\n            \"power_of_attorney_end_months\": 289,\n            \"power_of_attorney_end_days\": 8811,\n            \"created_at\": \"2024-05-06T06:52:53.000000Z\",\n            \"updated_at\": \"2024-05-06T06:52:53.000000Z\"\n        }\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Обновление ивента по id",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"theme\": \"theme23\",\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 1,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/lawsuit-event/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lawsuit-event",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Клиенты в запросе и деле не совпадают",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"theme\": \"theme\",\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 2,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/lawsuit-event",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"lawsuit-event"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 May 2024 18:55:19 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Клиенты не совадают\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\HttpException\",\n    \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php\",\n    \"line\": 1356,\n    \"trace\": [\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php\",\n            \"line\": 47,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/app/Http/Controllers/LawsuitEventController.php\",\n            \"line\": 31,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Controller.php\",\n            \"line\": 54,\n            \"function\": \"store\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\LawsuitEventController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php\",\n            \"line\": 43,\n            \"function\": \"callAction\",\n            \"class\": \"Illuminate\\\\Routing\\\\Controller\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Route.php\",\n            \"line\": 260,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Route.php\",\n            \"line\": 206,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 806,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php\",\n            \"line\": 64,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Auth\\\\Middleware\\\\Authenticate\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 805,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 784,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 748,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 737,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php\",\n            \"line\": 200,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php\",\n            \"line\": 51,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php\",\n            \"line\": 110,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php\",\n            \"line\": 62,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php\",\n            \"line\": 57,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php\",\n            \"line\": 175,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php\",\n            \"line\": 144,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php\",\n            \"line\": 1172,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/public/index.php\",\n            \"line\": 17,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Ошибка валидации",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"theme\": null,\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 1,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/lawsuit-event",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"lawsuit-event"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 May 2024 19:04:30 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The theme field is required.\",\n    \"errors\": {\n        \"theme\": [\n            \"The theme field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Успешный ответ",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"theme\": \"theme23\",\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 1,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/lawsuit-event/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"lawsuit-event",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2024 12:56:33 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 1,\n    \"data\": {\n        \"id\": 1,\n        \"theme\": \"theme23\",\n        \"is_important\": true,\n        \"since\": \"2024-06-05T09:00:00.000000Z\",\n        \"till\": null,\n        \"cost\": null,\n        \"place\": \"place\",\n        \"comment\": null,\n        \"remain_days\": 27,\n        \"created_at\": \"2024-05-08T18:31:39.000000Z\",\n        \"updated_at\": \"2024-05-09T12:56:33.000000Z\"\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Получение ивентов",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"theme\": \"theme\",\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 1,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/lawsuit-event?since_start=2024-05-10 00:00:00&since_end=2024-06-10 23:59:59",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lawsuit-event"
+							],
+							"query": [
+								{
+									"key": "since_start",
+									"value": "2024-05-10 00:00:00"
+								},
+								{
+									"key": "since_end",
+									"value": "2024-06-10 23:59:59"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Клиенты в запросе и деле не совпадают",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"theme\": \"theme\",\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 2,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/lawsuit-event",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"lawsuit-event"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 May 2024 18:55:19 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Клиенты не совадают\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\HttpException\",\n    \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php\",\n    \"line\": 1356,\n    \"trace\": [\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php\",\n            \"line\": 47,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/app/Http/Controllers/LawsuitEventController.php\",\n            \"line\": 31,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Controller.php\",\n            \"line\": 54,\n            \"function\": \"store\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\LawsuitEventController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php\",\n            \"line\": 43,\n            \"function\": \"callAction\",\n            \"class\": \"Illuminate\\\\Routing\\\\Controller\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Route.php\",\n            \"line\": 260,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Route.php\",\n            \"line\": 206,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 806,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php\",\n            \"line\": 64,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Auth\\\\Middleware\\\\Authenticate\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 805,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 784,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 748,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 737,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php\",\n            \"line\": 200,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php\",\n            \"line\": 51,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php\",\n            \"line\": 110,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php\",\n            \"line\": 62,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php\",\n            \"line\": 57,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php\",\n            \"line\": 175,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php\",\n            \"line\": 144,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php\",\n            \"line\": 1172,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/public/index.php\",\n            \"line\": 17,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Ошибка валидации",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"theme\": null,\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 1,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/lawsuit-event",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"lawsuit-event"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 May 2024 19:04:30 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"The theme field is required.\",\n    \"errors\": {\n        \"theme\": [\n            \"The theme field is required.\"\n        ]\n    }\n}"
+						},
+						{
+							"name": "Успешный ответ",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"theme\": \"theme\",\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 1,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/lawsuit-event?since_start=2024-05-10 00:00:00&since_end=2024-06-10 23:59:59",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"lawsuit-event"
+									],
+									"query": [
+										{
+											"key": "since_start",
+											"value": "2024-05-10 00:00:00"
+										},
+										{
+											"key": "since_end",
+											"value": "2024-06-10 23:59:59"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2024 05:24:02 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"theme\": \"theme\",\n            \"is_important\": true,\n            \"since\": \"2024-06-05T09:00:00.000000Z\",\n            \"till\": null,\n            \"cost\": null,\n            \"place\": \"place\",\n            \"comment\": null,\n            \"remain_days\": 27,\n            \"created_at\": \"2024-05-08T18:31:39.000000Z\",\n            \"updated_at\": \"2024-05-08T18:31:39.000000Z\",\n            \"customer\": {\n                \"id\": 1,\n                \"name\": \"dg\",\n                \"telegram\": \"+79859631245\",\n                \"whats_app\": \"+79859631245\",\n                \"phone\": \"+79859631245\",\n                \"email\": \"sefregtre@mail.com\",\n                \"last_active_at\": null,\n                \"deleted_at\": null,\n                \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                \"updated_at\": null\n            },\n            \"lawsuit\": null\n        },\n        {\n            \"id\": 2,\n            \"theme\": \"theme\",\n            \"is_important\": true,\n            \"since\": \"2024-06-05T09:00:00.000000Z\",\n            \"till\": null,\n            \"cost\": null,\n            \"place\": \"place\",\n            \"comment\": null,\n            \"remain_days\": 27,\n            \"created_at\": \"2024-05-08T18:31:56.000000Z\",\n            \"updated_at\": \"2024-05-08T18:31:56.000000Z\",\n            \"customer\": null,\n            \"lawsuit\": null\n        },\n        {\n            \"id\": 3,\n            \"theme\": \"theme\",\n            \"is_important\": true,\n            \"since\": \"2024-06-05T09:00:00.000000Z\",\n            \"till\": null,\n            \"cost\": null,\n            \"place\": \"place\",\n            \"comment\": null,\n            \"remain_days\": 27,\n            \"created_at\": \"2024-05-08T18:33:44.000000Z\",\n            \"updated_at\": \"2024-05-08T18:33:44.000000Z\",\n            \"customer\": null,\n            \"lawsuit\": {\n                \"id\": 3,\n                \"plot\": \"very long description\",\n                \"opponent\": \"opponent\",\n                \"rating\": 2,\n                \"contract_number\": \"12df\",\n                \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n                \"contract_validity\": \"2020-09-25T00:00:00.000000Z\",\n                \"power_of_attorney\": \"fddg\",\n                \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n                \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n                \"contract_end_months\": 289,\n                \"contract_end_days\": 8811,\n                \"power_of_attorney_end_months\": 289,\n                \"power_of_attorney_end_days\": 8811,\n                \"created_at\": \"2024-05-06T06:52:53.000000Z\",\n                \"updated_at\": \"2024-05-06T06:52:53.000000Z\",\n                \"customer\": {\n                    \"id\": 1,\n                    \"name\": \"dg\",\n                    \"telegram\": \"+79859631245\",\n                    \"whats_app\": \"+79859631245\",\n                    \"phone\": \"+79859631245\",\n                    \"email\": \"sefregtre@mail.com\",\n                    \"last_active_at\": null,\n                    \"deleted_at\": null,\n                    \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                    \"updated_at\": null\n                }\n            }\n        },\n        {\n            \"id\": 6,\n            \"theme\": \"theme\",\n            \"is_important\": true,\n            \"since\": \"2024-06-05T07:25:00.000000Z\",\n            \"till\": \"2024-07-05T18:36:00.000000Z\",\n            \"cost\": null,\n            \"place\": \"place\",\n            \"comment\": null,\n            \"remain_days\": 27,\n            \"created_at\": \"2024-05-08T18:43:28.000000Z\",\n            \"updated_at\": \"2024-05-08T18:43:28.000000Z\",\n            \"customer\": null,\n            \"lawsuit\": {\n                \"id\": 3,\n                \"plot\": \"very long description\",\n                \"opponent\": \"opponent\",\n                \"rating\": 2,\n                \"contract_number\": \"12df\",\n                \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n                \"contract_validity\": \"2020-09-25T00:00:00.000000Z\",\n                \"power_of_attorney\": \"fddg\",\n                \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n                \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n                \"contract_end_months\": 289,\n                \"contract_end_days\": 8811,\n                \"power_of_attorney_end_months\": 289,\n                \"power_of_attorney_end_days\": 8811,\n                \"created_at\": \"2024-05-06T06:52:53.000000Z\",\n                \"updated_at\": \"2024-05-06T06:52:53.000000Z\",\n                \"customer\": {\n                    \"id\": 1,\n                    \"name\": \"dg\",\n                    \"telegram\": \"+79859631245\",\n                    \"whats_app\": \"+79859631245\",\n                    \"phone\": \"+79859631245\",\n                    \"email\": \"sefregtre@mail.com\",\n                    \"last_active_at\": null,\n                    \"deleted_at\": null,\n                    \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                    \"updated_at\": null\n                }\n            }\n        },\n        {\n            \"id\": 7,\n            \"theme\": \"theme\",\n            \"is_important\": true,\n            \"since\": \"2024-06-05T09:00:00.000000Z\",\n            \"till\": \"2024-07-05T18:00:00.000000Z\",\n            \"cost\": null,\n            \"place\": \"place\",\n            \"comment\": null,\n            \"remain_days\": 27,\n            \"created_at\": \"2024-05-08T18:49:50.000000Z\",\n            \"updated_at\": \"2024-05-08T18:49:50.000000Z\",\n            \"customer\": null,\n            \"lawsuit\": {\n                \"id\": 3,\n                \"plot\": \"very long description\",\n                \"opponent\": \"opponent\",\n                \"rating\": 2,\n                \"contract_number\": \"12df\",\n                \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n                \"contract_validity\": \"2020-09-25T00:00:00.000000Z\",\n                \"power_of_attorney\": \"fddg\",\n                \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n                \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n                \"contract_end_months\": 289,\n                \"contract_end_days\": 8811,\n                \"power_of_attorney_end_months\": 289,\n                \"power_of_attorney_end_days\": 8811,\n                \"created_at\": \"2024-05-06T06:52:53.000000Z\",\n                \"updated_at\": \"2024-05-06T06:52:53.000000Z\",\n                \"customer\": {\n                    \"id\": 1,\n                    \"name\": \"dg\",\n                    \"telegram\": \"+79859631245\",\n                    \"whats_app\": \"+79859631245\",\n                    \"phone\": \"+79859631245\",\n                    \"email\": \"sefregtre@mail.com\",\n                    \"last_active_at\": null,\n                    \"deleted_at\": null,\n                    \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                    \"updated_at\": null\n                }\n            }\n        },\n        {\n            \"id\": 8,\n            \"theme\": \"theme\",\n            \"is_important\": true,\n            \"since\": \"2024-06-05T07:25:00.000000Z\",\n            \"till\": \"2024-07-05T18:36:00.000000Z\",\n            \"cost\": null,\n            \"place\": \"place\",\n            \"comment\": null,\n            \"remain_days\": 27,\n            \"created_at\": \"2024-05-08T18:51:26.000000Z\",\n            \"updated_at\": \"2024-05-08T18:51:26.000000Z\",\n            \"customer\": null,\n            \"lawsuit\": {\n                \"id\": 3,\n                \"plot\": \"very long description\",\n                \"opponent\": \"opponent\",\n                \"rating\": 2,\n                \"contract_number\": \"12df\",\n                \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n                \"contract_validity\": \"2020-09-25T00:00:00.000000Z\",\n                \"power_of_attorney\": \"fddg\",\n                \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n                \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n                \"contract_end_months\": 289,\n                \"contract_end_days\": 8811,\n                \"power_of_attorney_end_months\": 289,\n                \"power_of_attorney_end_days\": 8811,\n                \"created_at\": \"2024-05-06T06:52:53.000000Z\",\n                \"updated_at\": \"2024-05-06T06:52:53.000000Z\",\n                \"customer\": {\n                    \"id\": 1,\n                    \"name\": \"dg\",\n                    \"telegram\": \"+79859631245\",\n                    \"whats_app\": \"+79859631245\",\n                    \"phone\": \"+79859631245\",\n                    \"email\": \"sefregtre@mail.com\",\n                    \"last_active_at\": null,\n                    \"deleted_at\": null,\n                    \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                    \"updated_at\": null\n                }\n            }\n        },\n        {\n            \"id\": 9,\n            \"theme\": \"theme\",\n            \"is_important\": true,\n            \"since\": \"2024-06-05T09:00:00.000000Z\",\n            \"till\": \"2024-07-05T18:00:00.000000Z\",\n            \"cost\": null,\n            \"place\": \"place\",\n            \"comment\": null,\n            \"remain_days\": 27,\n            \"created_at\": \"2024-05-08T18:51:32.000000Z\",\n            \"updated_at\": \"2024-05-08T18:51:32.000000Z\",\n            \"customer\": null,\n            \"lawsuit\": {\n                \"id\": 3,\n                \"plot\": \"very long description\",\n                \"opponent\": \"opponent\",\n                \"rating\": 2,\n                \"contract_number\": \"12df\",\n                \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n                \"contract_validity\": \"2020-09-25T00:00:00.000000Z\",\n                \"power_of_attorney\": \"fddg\",\n                \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n                \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n                \"contract_end_months\": 289,\n                \"contract_end_days\": 8811,\n                \"power_of_attorney_end_months\": 289,\n                \"power_of_attorney_end_days\": 8811,\n                \"created_at\": \"2024-05-06T06:52:53.000000Z\",\n                \"updated_at\": \"2024-05-06T06:52:53.000000Z\",\n                \"customer\": {\n                    \"id\": 1,\n                    \"name\": \"dg\",\n                    \"telegram\": \"+79859631245\",\n                    \"whats_app\": \"+79859631245\",\n                    \"phone\": \"+79859631245\",\n                    \"email\": \"sefregtre@mail.com\",\n                    \"last_active_at\": null,\n                    \"deleted_at\": null,\n                    \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                    \"updated_at\": null\n                }\n            }\n        },\n        {\n            \"id\": 10,\n            \"theme\": \"theme\",\n            \"is_important\": true,\n            \"since\": \"2024-06-05T07:25:00.000000Z\",\n            \"till\": \"2024-07-05T18:36:00.000000Z\",\n            \"cost\": null,\n            \"place\": \"place\",\n            \"comment\": null,\n            \"remain_days\": 27,\n            \"created_at\": \"2024-05-08T19:04:00.000000Z\",\n            \"updated_at\": \"2024-05-08T19:04:00.000000Z\",\n            \"customer\": null,\n            \"lawsuit\": {\n                \"id\": 3,\n                \"plot\": \"very long description\",\n                \"opponent\": \"opponent\",\n                \"rating\": 2,\n                \"contract_number\": \"12df\",\n                \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n                \"contract_validity\": \"2020-09-25T00:00:00.000000Z\",\n                \"power_of_attorney\": \"fddg\",\n                \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n                \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n                \"contract_end_months\": 289,\n                \"contract_end_days\": 8811,\n                \"power_of_attorney_end_months\": 289,\n                \"power_of_attorney_end_days\": 8811,\n                \"created_at\": \"2024-05-06T06:52:53.000000Z\",\n                \"updated_at\": \"2024-05-06T06:52:53.000000Z\",\n                \"customer\": {\n                    \"id\": 1,\n                    \"name\": \"dg\",\n                    \"telegram\": \"+79859631245\",\n                    \"whats_app\": \"+79859631245\",\n                    \"phone\": \"+79859631245\",\n                    \"email\": \"sefregtre@mail.com\",\n                    \"last_active_at\": null,\n                    \"deleted_at\": null,\n                    \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                    \"updated_at\": null\n                }\n            }\n        },\n        {\n            \"id\": 5,\n            \"theme\": \"theme\",\n            \"is_important\": true,\n            \"since\": \"2024-05-10T09:00:00.000000Z\",\n            \"till\": \"2024-07-05T18:00:00.000000Z\",\n            \"cost\": null,\n            \"place\": \"place\",\n            \"comment\": null,\n            \"remain_days\": 1,\n            \"created_at\": \"2024-05-08T18:42:17.000000Z\",\n            \"updated_at\": \"2024-05-08T18:42:17.000000Z\",\n            \"customer\": null,\n            \"lawsuit\": {\n                \"id\": 3,\n                \"plot\": \"very long description\",\n                \"opponent\": \"opponent\",\n                \"rating\": 2,\n                \"contract_number\": \"12df\",\n                \"contract_signing_date\": \"2000-03-25T00:00:00.000000Z\",\n                \"contract_validity\": \"2020-09-25T00:00:00.000000Z\",\n                \"power_of_attorney\": \"fddg\",\n                \"power_of_attorney_signing_date\": \"2020-03-25T00:00:00.000000Z\",\n                \"power_of_attorney_validity\": \"2027-03-25T00:00:00.000000Z\",\n                \"contract_end_months\": 289,\n                \"contract_end_days\": 8811,\n                \"power_of_attorney_end_months\": 289,\n                \"power_of_attorney_end_days\": 8811,\n                \"created_at\": \"2024-05-06T06:52:53.000000Z\",\n                \"updated_at\": \"2024-05-06T06:52:53.000000Z\",\n                \"customer\": {\n                    \"id\": 1,\n                    \"name\": \"dg\",\n                    \"telegram\": \"+79859631245\",\n                    \"whats_app\": \"+79859631245\",\n                    \"phone\": \"+79859631245\",\n                    \"email\": \"sefregtre@mail.com\",\n                    \"last_active_at\": null,\n                    \"deleted_at\": null,\n                    \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n                    \"updated_at\": null\n                }\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Получение ивента по id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"theme\": \"theme\",\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 1,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/lawsuit-event/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lawsuit-event",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Клиенты в запросе и деле не совпадают",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"theme\": \"theme\",\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 2,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/lawsuit-event",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"lawsuit-event"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 May 2024 18:55:19 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Клиенты не совадают\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\HttpException\",\n    \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php\",\n    \"line\": 1356,\n    \"trace\": [\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php\",\n            \"line\": 47,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/app/Http/Controllers/LawsuitEventController.php\",\n            \"line\": 31,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Controller.php\",\n            \"line\": 54,\n            \"function\": \"store\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\LawsuitEventController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php\",\n            \"line\": 43,\n            \"function\": \"callAction\",\n            \"class\": \"Illuminate\\\\Routing\\\\Controller\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Route.php\",\n            \"line\": 260,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Route.php\",\n            \"line\": 206,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 806,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php\",\n            \"line\": 64,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Auth\\\\Middleware\\\\Authenticate\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 805,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 784,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 748,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 737,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php\",\n            \"line\": 200,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php\",\n            \"line\": 51,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php\",\n            \"line\": 110,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php\",\n            \"line\": 62,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php\",\n            \"line\": 57,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php\",\n            \"line\": 175,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php\",\n            \"line\": 144,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php\",\n            \"line\": 1172,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/public/index.php\",\n            \"line\": 17,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Успешный ответ",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"theme\": \"theme\",\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 1,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/lawsuit-event/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"lawsuit-event",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2024 13:13:51 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 1,\n    \"data\": {\n        \"id\": 1,\n        \"theme\": \"theme23\",\n        \"is_important\": true,\n        \"since\": \"2024-06-05T09:00:00.000000Z\",\n        \"till\": null,\n        \"cost\": null,\n        \"place\": \"place\",\n        \"comment\": null,\n        \"remain_days\": 27,\n        \"created_at\": \"2024-05-08T18:31:39.000000Z\",\n        \"updated_at\": \"2024-05-09T12:56:33.000000Z\",\n        \"customer\": {\n            \"id\": 1,\n            \"name\": \"dg\",\n            \"telegram\": \"+79859631245\",\n            \"whats_app\": \"+79859631245\",\n            \"phone\": \"+79859631245\",\n            \"email\": \"sefregtre@mail.com\",\n            \"last_active_at\": null,\n            \"deleted_at\": null,\n            \"created_at\": \"2024-05-06T09:40:04.000000Z\",\n            \"updated_at\": null\n        },\n        \"lawsuit\": null\n    },\n    \"error\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Удалить ивент по id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"theme\": \"theme\",\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 1,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/lawsuit-event/:id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"lawsuit-event",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Клиенты в запросе и деле не совпадают",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"theme\": \"theme\",\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 2,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/lawsuit-event",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"lawsuit-event"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 May 2024 18:55:19 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Клиенты не совадают\",\n    \"exception\": \"Symfony\\\\Component\\\\HttpKernel\\\\Exception\\\\HttpException\",\n    \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php\",\n    \"line\": 1356,\n    \"trace\": [\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php\",\n            \"line\": 47,\n            \"function\": \"abort\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/app/Http/Controllers/LawsuitEventController.php\",\n            \"line\": 31,\n            \"function\": \"abort\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Controller.php\",\n            \"line\": 54,\n            \"function\": \"store\",\n            \"class\": \"App\\\\Http\\\\Controllers\\\\LawsuitEventController\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/ControllerDispatcher.php\",\n            \"line\": 43,\n            \"function\": \"callAction\",\n            \"class\": \"Illuminate\\\\Routing\\\\Controller\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Route.php\",\n            \"line\": 260,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\ControllerDispatcher\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Route.php\",\n            \"line\": 206,\n            \"function\": \"runController\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 806,\n            \"function\": \"run\",\n            \"class\": \"Illuminate\\\\Routing\\\\Route\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Illuminate\\\\Routing\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Middleware/SubstituteBindings.php\",\n            \"line\": 50,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Routing\\\\Middleware\\\\SubstituteBindings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Auth/Middleware/Authenticate.php\",\n            \"line\": 64,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Auth\\\\Middleware\\\\Authenticate\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 805,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 784,\n            \"function\": \"runRouteWithinStack\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 748,\n            \"function\": \"runRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Routing/Router.php\",\n            \"line\": 737,\n            \"function\": \"dispatchToRoute\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php\",\n            \"line\": 200,\n            \"function\": \"dispatch\",\n            \"class\": \"Illuminate\\\\Routing\\\\Router\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 144,\n            \"function\": \"Illuminate\\\\Foundation\\\\Http\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/ConvertEmptyStringsToNull.php\",\n            \"line\": 31,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\ConvertEmptyStringsToNull\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TransformsRequest.php\",\n            \"line\": 21,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/TrimStrings.php\",\n            \"line\": 51,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TransformsRequest\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\TrimStrings\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Http/Middleware/ValidatePostSize.php\",\n            \"line\": 27,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\ValidatePostSize\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Middleware/PreventRequestsDuringMaintenance.php\",\n            \"line\": 110,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Middleware\\\\PreventRequestsDuringMaintenance\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Http/Middleware/HandleCors.php\",\n            \"line\": 62,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\HandleCors\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Http/Middleware/TrustProxies.php\",\n            \"line\": 57,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 183,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Http\\\\Middleware\\\\TrustProxies\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Pipeline/Pipeline.php\",\n            \"line\": 119,\n            \"function\": \"Illuminate\\\\Pipeline\\\\{closure}\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php\",\n            \"line\": 175,\n            \"function\": \"then\",\n            \"class\": \"Illuminate\\\\Pipeline\\\\Pipeline\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php\",\n            \"line\": 144,\n            \"function\": \"sendRequestThroughRouter\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/vendor/laravel/framework/src/Illuminate/Foundation/Application.php\",\n            \"line\": 1172,\n            \"function\": \"handle\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Http\\\\Kernel\",\n            \"type\": \"->\"\n        },\n        {\n            \"file\": \"/src/public/index.php\",\n            \"line\": 17,\n            \"function\": \"handleRequest\",\n            \"class\": \"Illuminate\\\\Foundation\\\\Application\",\n            \"type\": \"->\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Успешный ответ",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"theme\": \"theme\",\n    \"is_important\": true,\n    \"since_date\": \"2024-05-06\",\n    \"till_date\": \"2024-05-07\",\n    \"since_time\": \"07:25:00\",\n    \"till_time\": \"18:36:00\",\n    \"cost\": null,\n    \"place\": \"place\",\n    \"comment\": null,\n    \"lawsuit_event_category_id\": 1,\n    \"customer_id\": 1,\n    \"lawsuit_id\": 3,\n    \"is_all_day\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/v1/lawsuit-event/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"lawsuit-event",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=30"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.2.18"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 09 May 2024 13:15:39 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": 1,\n    \"data\": \"\",\n    \"error\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "Регистрация пользователя",
 			"request": {
 				"method": "POST",
@@ -4091,7 +5984,7 @@
 		},
 		{
 			"key": "auth-token",
-			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODUvYXBpL3YxL2F1dGgvbG9naW4iLCJpYXQiOjE3MTQ5Nzc1MTgsImV4cCI6MTcxNDk4MTExOCwibmJmIjoxNzE0OTc3NTE4LCJqdGkiOiJ0OXFQSmRnRjRlUU1ieUEzIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.oFnN9VV_luHQfg-Bb634OlK_KB_ouscVxEee2boMkDg"
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODUvYXBpL3YxL2F1dGgvbG9naW4iLCJpYXQiOjE3MTUyMDMzMTcsImV4cCI6MTcxNTIwNjkxNywibmJmIjoxNzE1MjAzMzE3LCJqdGkiOiJqcUFFelFacTNGWkFENlBaIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.84ic3D04NXJCi6vHx2wnNE4tMoh2stik5JS-8ftQIRM"
 		}
 	]
 }
