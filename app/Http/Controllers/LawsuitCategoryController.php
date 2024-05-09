@@ -8,17 +8,27 @@ use App\Http\Resources\LawsuitCategoryResource;
 use App\Models\LawsuitCategory;
 use App\Services\LawsuitCategoryService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class LawsuitCategoryController extends Controller
 {
     use AuthorizesRequests;
 
-    public function index()
+    private const ITEMS_PER_PAGE = 20;
+
+    public function index(Request $request)
     {
         $this->authorize('viewAny', LawsuitCategory::class);
 
-        return api_response(LawsuitCategoryResource::collection(auth()->user()->lawsuitCategories));
+        return api_response(
+            LawsuitCategoryResource::collection(
+                auth()
+                    ->user()
+                    ->lawsuitCategories()
+                    ->paginate(min($request->query->get('items_per_page'), self::ITEMS_PER_PAGE)),
+            ),
+        );
     }
 
     public function store(LawsuitCategoryRequest $request)

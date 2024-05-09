@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Http\Controllers\LawsuitEventCategoryController;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -53,6 +52,8 @@ class User extends Authenticatable implements JWTSubject
     {
         return [
             'email_verified_at' => 'datetime',
+            'start_working_time' => 'custom_datetime:H:m',
+            'end_working_time' => 'custom_datetime:H:m',
             'password' => 'hashed',
             'is_active' => 'boolean',
         ];
@@ -80,7 +81,12 @@ class User extends Authenticatable implements JWTSubject
 
     public function lawsuitEventCategories(): HasMany
     {
-        return $this->hasMany(LawsuitEventCategoryController::class);
+        return $this->hasMany(LawsuitEventCategory::class);
+    }
+
+    public function lawsuitEvents(): HasMany
+    {
+        return $this->hasMany(LawsuitEvent::class);
     }
 
     public function getJWTIdentifier()
