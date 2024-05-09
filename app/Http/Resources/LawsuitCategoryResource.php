@@ -16,9 +16,6 @@ class LawsuitCategoryResource extends JsonResource
             'color' => $this->color,
             'notify_before_hours' => $this->notify_before_hours,
             'mark_before_days' => $this->mark_before_days,
-            'actions' => [
-                'is_deletable' => $this->isDeletable(),
-            ],
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LawsuitRequest;
+use App\Http\Requests\LawsuitQueryRequest;
 use App\Http\Resources\AuthorityResource;
 use App\Http\Resources\LawsuitResource;
 use App\Models\Lawsuit;
+use App\Reporters\LawsuitReporter;
 use App\Services\LawsuitService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\DB;
+use Symfony\Component\HttpFoundation\Request;
 
 class LawsuitController extends Controller
 {
@@ -15,18 +19,30 @@ class LawsuitController extends Controller
 
     private const ITEMS_PER_PAGE = 20;
 
-    public function index()
+    public function index(LawsuitQueryRequest $request)
     {
         $this->authorize('viewAny', Lawsuit::class);
 
-        return LawsuitResource::collection(
-            auth()
-                ->user()
-                ->lawsuits()
-                ->with(['customer', 'lawsuitCategory', 'authorities' => function ($query) {
+        $query = app(LawsuitReporter::class)
+            ->setUser(auth()->user())
+            ->setUpcomingEventSort($request->query->get('upcoming_event_sort'))
+            ->setRatingSort($request->query->get('rating_sort'))
+            ->setOpponentSort($request->query->get('opponent_sort'))
+            ->builder()
+            ->with([
+                'customer',
+                'lawsuitCategory',
+                'authorities' => function ($query) {
                     $query->orderBy('created_at', 'desc')->limit(1);
-                }])
-                ->paginate(self::ITEMS_PER_PAGE),
+                },
+                'lawsuitEvents' => function ($query) {
+                    $query->orderBy(DB::raw('since - now()::timestamp'), 'desc')->limit(1);
+                }
+            ])
+            ->withCount('lawsuitEvents');
+
+        return LawsuitResource::collection(
+            $query->paginate(min(self::ITEMS_PER_PAGE, $request->query->get('items_per_page'))),
         );
     }
 

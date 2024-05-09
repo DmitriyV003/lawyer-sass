@@ -31,5 +31,4 @@ class LawsuitCategoryService
         }
         $this->lawsuitCategory->delete();
     }
-
 }

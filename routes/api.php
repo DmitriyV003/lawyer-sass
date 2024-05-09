@@ -8,6 +8,7 @@ use App\Http\Controllers\LawsuitCategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LawsuitController;
 use App\Http\Controllers\LawsuitEventCategoryController;
+use App\Http\Controllers\LawsuitEventController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\TaskTagController;
 use App\Http\Controllers\UserController;
@@ -40,14 +41,22 @@ Route::prefix('/v1')->group(function () {
             ->only('index', 'show', 'store', 'destroy', 'update');
         Route::apiResource('lawsuit-category', LawsuitCategoryController::class)
             ->only('index', 'show', 'store', 'destroy', 'update');
-        Route::apiResource('lawsuit', LawsuitController::class)
-            ->only('index', 'show', 'store', 'destroy', 'update');
-        Route::get('/lawsuit/{lawsuit}/authorities', [LawsuitController::class, 'authorities']);
+        Route::prefix('/lawsuit')->group(function () {
+            Route::apiResource('/', LawsuitController::class)
+                ->only('index', 'show', 'store', 'destroy', 'update');
+            Route::get('/{lawsuit}/authorities', [LawsuitController::class, 'authorities']);
+        });
         Route::apiResource('authority', AuthorityController::class)
             ->only('show', 'store', 'destroy', 'update');
         Route::apiResource('task-tag', TaskTagController::class)
             ->only('index', 'show', 'store', 'destroy', 'update');
         Route::apiResource('lawsuit-event-category', LawsuitEventCategoryController::class)
             ->only('index', 'show', 'store', 'destroy', 'update');
+        Route::prefix('/lawsuit-event')->group(function () {
+            Route::apiResource('/', LawsuitEventController::class)
+                ->only('index', 'show', 'store', 'destroy', 'update');
+            Route::post('/{lawsuit-event}/finish', [LawsuitEventController::class, 'finish']);
+        });
+
     });
 });
