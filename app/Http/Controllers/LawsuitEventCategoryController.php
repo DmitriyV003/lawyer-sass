@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\ServiceException;
 use App\Http\Requests\LawsuitEventCategoryRequest;
 use App\Http\Resources\LawsuitEventCategoryResource;
 use App\Models\LawsuitEventCategory;
 use App\Services\LawsuitEventCategoryService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Symfony\Component\HttpFoundation\Response;
 
 class LawsuitEventCategoryController extends Controller
 {
@@ -48,7 +50,11 @@ class LawsuitEventCategoryController extends Controller
     {
         $this->authorize('delete', $lawsuitEventCategory);
 
-        $lawsuitEventCategory->delete();
+        try {
+            app(LawsuitEventCategoryService::class, ['lawsuitEventCategory' => $lawsuitEventCategory])->delete();
+        } catch (ServiceException $exception) {
+            abort(Response::HTTP_UNPROCESSABLE_ENTITY, $exception->getMessage());
+        }
 
         return api_response();
     }

@@ -27,9 +27,9 @@ class LawsuitEventCategoryService
 
     public function delete(): void
     {
-//        if ($this->taskTag->lawsuits()->exists()) {
-//            throw new ServiceException('В категории есть дела, удалить нельзя');
-//        }
+        if ($this->lawsuitEventCategory->lawsuitEvents()->exists()) {
+            throw new ServiceException('В категории есть ивенты, удалить нельзя');
+        }
         $this->lawsuitEventCategory->delete();
     }
 
