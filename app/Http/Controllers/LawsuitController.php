@@ -28,6 +28,7 @@ class LawsuitController extends Controller
             ->setUpcomingEventSort($request->query->get('upcoming_event_sort'))
             ->setRatingSort($request->query->get('rating_sort'))
             ->setOpponentSort($request->query->get('opponent_sort'))
+            ->setCustomerId($request->query->get('customer_id'))
             ->builder()
             ->with([
                 'customer',
