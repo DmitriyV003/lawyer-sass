@@ -40,7 +40,7 @@ class LawsuitEvent extends Model
     public function remainDays(): Attribute
     {
         return new Attribute(
-            get: fn ($value) => round(Carbon::now()->diffInDays($this->since)),
+            get: fn ($value) => max(round(Carbon::now()->diffInDays($this->since)), 0),
         );
     }
 
