@@ -13,6 +13,7 @@ class LawsuitReporter
     private ?string $upcomingEventSort = null;
     private ?string $ratingSort = null;
     private ?string $opponentSort = null;
+    private ?int $customerId = null;
 
     public function builder()
     {
@@ -30,6 +31,9 @@ class LawsuitReporter
             })
             ->when($this->ratingSort, function ($query, $sort) {
                 $query->orderBy('rating', $sort);
+            })
+            ->when($this->customerId, function ($query, $customerId) {
+                $query->where('customer_id', $customerId);
             })
             ->when($this->opponentSort, function ($query, $sort) {
                 $query->orderBy('opponent', $sort);
@@ -60,6 +64,13 @@ class LawsuitReporter
     public function setOpponentSort(?string $opponentSort): self
     {
         $this->opponentSort = $opponentSort;
+
+        return $this;
+    }
+
+    public function setCustomerId(?int $customerId): self
+    {
+        $this->customerId = $customerId;
 
         return $this;
     }

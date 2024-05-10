@@ -9,6 +9,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\LawsuitController;
 use App\Http\Controllers\LawsuitEventCategoryController;
 use App\Http\Controllers\LawsuitEventController;
+use App\Http\Controllers\NoteController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\TaskTagController;
 use App\Http\Controllers\UserController;
@@ -57,6 +58,6 @@ Route::prefix('/v1')->group(function () {
                 ->only('index', 'show', 'store', 'destroy', 'update');
             Route::post('/{lawsuit-event}/finish', [LawsuitEventController::class, 'finish']);
         });
-
+        Route::apiResource('/note', NoteController::class);
     });
 });
