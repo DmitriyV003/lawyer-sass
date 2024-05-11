@@ -2,24 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GetTaskRequest;
 use App\Http\Requests\TaskRequest;
 use App\Http\Requests\UpdateTaskToDoDateRequest;
 use App\Http\Resources\TaskResource;
 use App\Models\Task;
+use App\Reporters\TaskReporter;
 use App\Services\TaskService;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
     use AuthorizesRequests;
 
-    public function index(Request $request)
+    public function index(GetTaskRequest $request)
     {
         $this->authorize('viewAny', Task::class);
+        $builder = app(TaskReporter::class)
+            ->setUser(auth()->user())
+            ->setToDoDate(new Carbon($request->query->get('to_do_date')))
+            ->builder();
 
         return TaskResource::collection(
-            auth()->user()->tasks()->paginate(min($request->query->get('items_per_page'), 40)),
+            $builder->paginate(min($request->query->get('items_per_page'), 40)),
         );
     }
 

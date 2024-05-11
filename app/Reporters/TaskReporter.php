@@ -4,10 +4,12 @@ namespace App\Reporters;
 
 use App\Models\Task;
 use App\Models\User;
+use Carbon\Carbon;
 
 class TaskReporter
 {
     private ?int $customerId = null;
+    private ?Carbon $toDoDate = null;
     private ?User $user = null;
 
     public function builder()
@@ -21,6 +23,9 @@ class TaskReporter
             )
             ->when($this->user, function ($query, $user) {
                 $query->where('tasks.user_id', $user->id);
+            })
+            ->when($this->toDoDate, function ($query, $toDoDate) {
+                $query->whereBetween([$toDoDate->copy()->startOfDay(), $toDoDate->copy()->endOfDay()]);
             })
             ->when($this->customerId, function ($query, $customerId) {
                 $query ->leftJoin('lawsuits', 'lawsuits.id', 'tasks.lawsuit_id');
@@ -43,6 +48,13 @@ class TaskReporter
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function setToDoDate(?Carbon $toDoDate): self
+    {
+        $this->toDoDate = $toDoDate;
 
         return $this;
     }
