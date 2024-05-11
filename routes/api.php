@@ -61,7 +61,7 @@ Route::prefix('/v1')->group(function () {
         Route::prefix('/lawsuit-event')->group(function () {
             Route::apiResource('/', LawsuitEventController::class)
                 ->only('index', 'show', 'store', 'destroy', 'update');
-            Route::post('/{lawsuitEvent}/finish', [LawsuitEventController::class, 'finish']);
+            Route::post('/{lawsuitEvent}/status', [LawsuitEventController::class, 'status']);
         });
         Route::apiResource('/note', NoteController::class);
     });

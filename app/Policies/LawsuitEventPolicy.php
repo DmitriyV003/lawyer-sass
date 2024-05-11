@@ -35,11 +35,6 @@ class LawsuitEventPolicy
         return $this->checkUserAndModel($user, $lawsuitEvent);
     }
 
-    public function finish(User $user, LawsuitEvent $lawsuitEvent): bool
-    {
-        return $this->checkUserAndModel($user, $lawsuitEvent);
-    }
-
     private function checkUserAndModel(User $user, LawsuitEvent $lawsuitEvent): bool
     {
         return $user->id === $lawsuitEvent->user_id;

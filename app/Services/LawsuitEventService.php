@@ -37,12 +37,12 @@ class LawsuitEventService
         return $this->lawsuitEvent;
     }
 
-    public function setFinishedStatus(): LawsuitEvent
+    public function updateStatus(string $status): LawsuitEvent
     {
-        if ($this->lawsuitEvent->isFinished()) {
-            throw new ServiceException('Ивент уже завершен');
+        if ($this->lawsuitEvent->status == $status) {
+            throw new ServiceException('Нельзя обновить статус');
         }
-        $this->lawsuitEvent->status = LawsuitEvent::FINISHED_STATUS;
+        $this->lawsuitEvent->status = $status;
         $this->lawsuitEvent->save();
 
         return $this->lawsuitEvent;
