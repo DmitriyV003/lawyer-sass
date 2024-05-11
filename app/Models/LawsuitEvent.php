@@ -16,6 +16,16 @@ class LawsuitEvent extends Model
     public const EVENT_TYPE = 'event';
     public const TASK_TYPE = 'task';
 
+    public const STATUSES = [
+        self::PLANNED_STATUS,
+        self::FINISHED_STATUS,
+    ];
+
+    public const TYPES = [
+        self::EVENT_TYPE,
+        self::TASK_TYPE,
+    ];
+
     protected $fillable = [
         'theme',
         'is_important',
