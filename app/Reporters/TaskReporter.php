@@ -25,7 +25,7 @@ class TaskReporter
                 $query->where('tasks.user_id', $user->id);
             })
             ->when($this->toDoDate, function ($query, $toDoDate) {
-                $query->whereBetween([$toDoDate->copy()->startOfDay(), $toDoDate->copy()->endOfDay()]);
+                $query->whereBetween('to_do_date', [$toDoDate->copy()->startOfDay(), $toDoDate->copy()->endOfDay()]);
             })
             ->when($this->customerId, function ($query, $customerId) {
                 $query ->leftJoin('lawsuits', 'lawsuits.id', 'tasks.lawsuit_id');
