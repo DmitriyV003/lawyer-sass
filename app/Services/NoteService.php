@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Exceptions\ServiceException;
+use App\Models\Customer;
 use App\Models\Lawsuit;
 use App\Models\Note;
 use App\Models\User;
@@ -43,8 +44,8 @@ class NoteService
         }
         if ($lawsuit) {
             $this->note->lawsuit()->associate($lawsuit);
-        } else if ($params['customer_id']) {
-            $this->note->customer_id = $params['customer_id'];
+        } else if ($params['customer_id'] && $customer = Customer::find($params['customer_id'])) {
+            $this->note->customer()->associate($customer);
         }
     }
 }

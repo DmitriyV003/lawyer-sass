@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Exceptions\ServiceException;
+use App\Models\Customer;
 use App\Models\Lawsuit;
 use App\Models\LawsuitEvent;
 use App\Models\Task;
@@ -52,8 +53,8 @@ class TaskService
         }
         if ($lawsuit) {
             $this->task->lawsuit()->associate($lawsuit);
-        } else if ($params['customer_id']) {
-            $this->task->customer_id = $params['customer_id'];
+        } else if ($params['customer_id'] && $customer = Customer::find($params['customer_id'])) {
+            $this->task->customer()->associate($customer);
         }
     }
 }

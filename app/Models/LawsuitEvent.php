@@ -41,6 +41,14 @@ class LawsuitEvent extends Model
         'remain_days',
     ];
 
+    protected function casts()
+    {
+        return [
+            'since' => 'datetime',
+            'till' => 'datetime',
+        ];
+    }
+
     public function remainDays(): Attribute
     {
         return new Attribute(
@@ -68,16 +76,13 @@ class LawsuitEvent extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function task(): BelongsTo
+    {
+        return $this->belongsTo(Task::class);
+    }
+
     public function isFinished(): bool
     {
         return $this->status === self::FINISHED_STATUS;
-    }
-
-    protected function casts()
-    {
-        return [
-            'since' => 'datetime',
-            'till' => 'datetime',
-        ];
     }
 }
