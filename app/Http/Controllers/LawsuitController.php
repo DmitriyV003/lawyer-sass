@@ -89,6 +89,8 @@ class LawsuitController extends Controller
     {
         $this->authorize('authorities', $lawsuit);
 
-        return api_response(AuthorityResource::collection($lawsuit->authorities()->orderBy('created_at', 'desc')->get()));
+        return api_response(
+            AuthorityResource::collection($lawsuit->authorities()->orderBy('created_at', 'desc')->get()),
+        );
     }
 }
