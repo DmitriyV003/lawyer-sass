@@ -11,6 +11,12 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Task extends Model
 {
     public const PLANNED_STATUS = 'planned';
+    public const FINISHED_STATUS = 'finished';
+
+    public const STATUSES = [
+        self::PLANNED_STATUS,
+        self::FINISHED_STATUS,
+    ];
 
     protected $fillable = [
         'theme',

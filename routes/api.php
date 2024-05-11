@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AuthController as AdminAuthControllerAlias;
 use App\Http\Controllers\Admin\RegistrationController as AdminRegistrationControllerAlias;
+use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthorityController;
 use App\Http\Controllers\LawsuitCategoryController;
@@ -29,6 +30,7 @@ Route::prefix('/v1')->group(function () {
     });
 
     Route::middleware('auth:api')->group(function () {
+        Route::get('/application', ApplicationController::class);
         Route::prefix('/auth')->group(function () {
             Route::post('/logout', [AuthController::class, 'logout']);
         });
