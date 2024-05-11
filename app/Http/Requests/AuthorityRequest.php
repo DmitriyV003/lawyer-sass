@@ -14,8 +14,9 @@ class AuthorityRequest extends BaseRequest
             'authority' => 'required',
             'judge' => 'required|max:255',
             'cabinet' => 'required|max:255',
-            'comment' => 'nullable',
+            'comment' => 'nullable|string',
             'lawsuit_id' => [
+                'integer',
                 'required',
                 Rule::exists('lawsuits')->where(function ($query) {
                     return $query->where('user_id', auth()->user()->id);
