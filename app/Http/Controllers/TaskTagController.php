@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\ServiceException;
 use App\Http\Requests\TaskTagRequest;
 use App\Http\Resources\TaskTagResource;
 use App\Models\TaskTag;
 use App\Services\TaskTagService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Symfony\Component\HttpFoundation\Response;
 
 class TaskTagController extends Controller
 {
@@ -16,7 +18,7 @@ class TaskTagController extends Controller
     {
         $this->authorize('viewAny', TaskTag::class);
 
-        return TaskTagResource::collection(auth()->user()->taskTags()->get());
+        return TaskTagResource::collection(auth()->user()->taskTags);
     }
 
     public function store(TaskTagRequest $request)
@@ -25,7 +27,7 @@ class TaskTagController extends Controller
 
         return api_response(
             new TaskTagResource(
-                TaskTag::create(app(TaskTagService::class)->create($request->validated(), auth()->user())),
+                app(TaskTagService::class)->create($request->validated(), auth()->user()),
             ),
         );
     }
@@ -50,7 +52,11 @@ class TaskTagController extends Controller
     {
         $this->authorize('delete', $taskTag);
 
-        $taskTag->delete();
+        try {
+            app(TaskTagService::class, ['taskTag' => $taskTag])->delete();
+        } catch (ServiceException $exception) {
+            abort(Response::HTTP_UNPROCESSABLE_ENTITY, $exception->getMessage());
+        }
 
         return api_response();
     }

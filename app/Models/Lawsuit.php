@@ -105,6 +105,11 @@ class Lawsuit extends Model
         return $this->hasMany(LawsuitEvent::class);
     }
 
+    public function notes(): HasMany
+    {
+        return $this->hasMany(Note::class);
+    }
+
     private function getContractValidityDateInterval()
     {
         if ($this->contract_validity && $this->contract_signing_date) {

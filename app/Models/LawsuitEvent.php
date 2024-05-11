@@ -6,11 +6,15 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class LawsuitEvent extends Model
 {
     public const PLANNED_STATUS = 'planned';
     public const FINISHED_STATUS = 'finished';
+
+    public const EVENT_TYPE = 'event';
+    public const TASK_TYPE = 'task';
 
     protected $fillable = [
         'theme',
@@ -62,6 +66,11 @@ class LawsuitEvent extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function isFinished(): bool
+    {
+        return $this->status === self::FINISHED_STATUS;
     }
 
     protected function casts()

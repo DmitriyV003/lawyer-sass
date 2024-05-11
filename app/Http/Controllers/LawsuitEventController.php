@@ -71,7 +71,11 @@ class LawsuitEventController extends Controller
     {
         $this->authorize('finish', $lawsuitEvent);
 
-        $updatedEvent = app(LawsuitEventService::class, ['lawsuitEvent' => $lawsuitEvent])->setFinishedStatus();
+        try {
+            $updatedEvent = app(LawsuitEventService::class, ['lawsuitEvent' => $lawsuitEvent])->setFinishedStatus();
+        } catch (ServiceException $exception) {
+            abort(Response::HTTP_UNPROCESSABLE_ENTITY, $exception->getMessage());
+        }
 
         return api_response(new LawsuitEventResource($updatedEvent->load(['lawsuit', 'customer', 'lawsuit.customer'])));
     }

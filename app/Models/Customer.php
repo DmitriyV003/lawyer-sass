@@ -39,6 +39,16 @@ class Customer extends Model
         return $this->hasMany(Lawsuit::class);
     }
 
+    public function tasks(): HasMany
+    {
+        return $this->hasMany(Task::class);
+    }
+
+    public function lawsuitEvents(): HasMany
+    {
+        return $this->hasMany(LawsuitEvent::class);
+    }
+
     protected function phone(): Attribute
     {
         return Attribute::make(

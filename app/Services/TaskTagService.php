@@ -26,9 +26,9 @@ class TaskTagService
 
     public function delete(): void
     {
-//        if ($this->taskTag->lawsuits()->exists()) {
-//            throw new ServiceException('В категории есть дела, удалить нельзя');
-//        }
+        if ($this->taskTag->tasks()->exists()) {
+            throw new ServiceException('Тег привязан к задачам, удалить нельзя');
+        }
         $this->taskTag->delete();
     }
 

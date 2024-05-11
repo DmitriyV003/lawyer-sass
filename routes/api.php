@@ -38,8 +38,11 @@ Route::prefix('/v1')->group(function () {
             Route::put('/', [UserController::class, 'update']);
             Route::put('/update-password', [UserController::class, 'updatePassword']);
         });
-        Route::apiResource('customer', CustomerController::class)
-            ->only('index', 'show', 'store', 'destroy', 'update');
+        Route::prefix('/customer')->group(function () {
+            Route::apiResource('/', CustomerController::class)
+                ->only('index', 'show', 'store', 'destroy', 'update');
+            Route::get('/{customer}/events', [CustomerController::class, 'events']);
+        });
         Route::apiResource('lawsuit-category', LawsuitCategoryController::class)
             ->only('index', 'show', 'store', 'destroy', 'update');
         Route::prefix('/lawsuit')->group(function () {
@@ -56,7 +59,7 @@ Route::prefix('/v1')->group(function () {
         Route::prefix('/lawsuit-event')->group(function () {
             Route::apiResource('/', LawsuitEventController::class)
                 ->only('index', 'show', 'store', 'destroy', 'update');
-            Route::post('/{lawsuit-event}/finish', [LawsuitEventController::class, 'finish']);
+            Route::post('/{lawsuitEvent}/finish', [LawsuitEventController::class, 'finish']);
         });
         Route::apiResource('/note', NoteController::class);
     });

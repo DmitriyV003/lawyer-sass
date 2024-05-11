@@ -37,14 +37,14 @@ class NoteController extends Controller
     {
         $this->authorize('view', $note);
 
-        return api_response(new NoteResource($note));
+        return api_response(new NoteResource($note->load(['lawsuit', 'customer'])));
     }
 
     public function update(NoteRequest $request, Note $note)
     {
         $this->authorize('update', $note);
 
-        $note->update($request->validated());
+        $note = app(NoteService::class, ['note' => $note])->update($request->validated());
 
         return api_response(new NoteResource($note));
     }
