@@ -14,8 +14,8 @@ class Task extends Model
     public const FINISHED_STATUS = 'finished';
 
     public const STATUSES = [
-        self::PLANNED_STATUS,
-        self::FINISHED_STATUS,
+        self::PLANNED_STATUS => 'запланированно',
+        self::FINISHED_STATUS => 'завершено',
     ];
 
     protected $fillable = [

@@ -17,8 +17,8 @@ class LawsuitEvent extends Model
     public const TASK_TYPE = 'task';
 
     public const STATUSES = [
-        self::PLANNED_STATUS,
-        self::FINISHED_STATUS,
+        self::PLANNED_STATUS => 'запланированно',
+        self::FINISHED_STATUS => 'завершено',
     ];
 
     public const TYPES = [
