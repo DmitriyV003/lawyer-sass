@@ -20,12 +20,14 @@ class LawsuitRequest extends BaseRequest
             'power_of_attorney_validity' => 'nullable|date|required_with:power_of_attorney',
             'customer_id' => [
                 'nullable',
+                'integer',
                 Rule::exists('customers', 'id')->where(function ($query) {
                    return $query->where('user_id', auth()->user()->id);
                 }),
             ],
             'lawsuit_category_id' => [
                 'required',
+                'integer',
                 Rule::exists('lawsuit_categories', 'id')->where(function ($query) {
                     return $query->where('user_id', auth()->user()->id);
                 }),
