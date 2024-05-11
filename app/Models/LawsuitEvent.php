@@ -95,4 +95,9 @@ class LawsuitEvent extends Model
     {
         return $this->status === self::FINISHED_STATUS;
     }
+
+    public function isPlanned(): bool
+    {
+        return $this->status === self::PLANNED_STATUS;
+    }
 }

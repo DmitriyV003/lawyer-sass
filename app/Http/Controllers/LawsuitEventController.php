@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Exceptions\ServiceException;
 use App\Http\Requests\LawsuitEventQueryRequest;
 use App\Http\Requests\LawsuitEventRequest;
+use App\Http\Requests\StatusRequest;
 use App\Http\Resources\LawsuitEventResource;
 use App\Models\LawsuitEvent;
 use App\Reporters\LawsuitEventReporter;
@@ -67,12 +68,13 @@ class LawsuitEventController extends Controller
         return api_response();
     }
 
-    public function finish(LawsuitEvent $lawsuitEvent)
+    public function status(LawsuitEvent $lawsuitEvent, StatusRequest $request)
     {
-        $this->authorize('finish', $lawsuitEvent);
+        $this->authorize('update', $lawsuitEvent);
 
         try {
-            $updatedEvent = app(LawsuitEventService::class, ['lawsuitEvent' => $lawsuitEvent])->setFinishedStatus();
+            $updatedEvent = app(LawsuitEventService::class, ['lawsuitEvent' => $lawsuitEvent])
+                ->updateStatus($request->validated()['status']);
         } catch (ServiceException $exception) {
             abort(Response::HTTP_UNPROCESSABLE_ENTITY, $exception->getMessage());
         }
