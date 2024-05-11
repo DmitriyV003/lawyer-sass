@@ -37,7 +37,8 @@ return new class extends Migration
                 ->after('user_id')
                 ->nullable()
                 ->references('id')
-                ->on('tasks');
+                ->on('tasks')
+                ->nullOnDelete();
         });
 
         Schema::table('notes', function (Blueprint $table) {

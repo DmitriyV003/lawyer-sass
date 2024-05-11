@@ -26,6 +26,7 @@ class LawsuitEventResource extends JsonResource
             'lawsuit_event_category' => new LawsuitEventCategoryResource($this->whenLoaded('lawsuitEventCategory')),
             'customer' => new CustomerResource($this->whenLoaded('customer')),
             'lawsuit' => new LawsuitResource($this->whenLoaded('lawsuit')),
+            'task' => new TaskResource($this->whenLoaded('task')),
         ];
     }
 }

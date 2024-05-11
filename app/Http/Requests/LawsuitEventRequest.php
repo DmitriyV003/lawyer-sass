@@ -29,19 +29,29 @@ class LawsuitEventRequest extends FormRequest
             'comment' => 'nullable|string',
             'lawsuit_event_category_id' => [
                 'required',
+                'integer',
                 Rule::exists('lawsuit_event_categories', 'id')->where(function ($query) {
                     return $query->where('user_id', auth()->user()->id);
                 }),
             ],
             'customer_id' => [
                 'nullable',
+                'integer',
                 Rule::exists('customers', 'id')->where(function ($query) {
                     return $query->where('user_id', auth()->user()->id);
                 }),
             ],
             'lawsuit_id' => [
                 'nullable',
+                'integer',
                 Rule::exists('lawsuits', 'id')->where(function ($query) {
+                    return $query->where('user_id', auth()->user()->id);
+                }),
+            ],
+            'task_id' => [
+                'nullable',
+                'integer',
+                Rule::exists('tasks', 'id')->where(function ($query) {
                     return $query->where('user_id', auth()->user()->id);
                 }),
             ],
