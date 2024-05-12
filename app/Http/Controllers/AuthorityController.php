@@ -15,14 +15,14 @@ class AuthorityController extends Controller
     {
         $this->authorize('create', Authority::class);
 
-        return new AuthorityResource(Authority::create($request->validated()));
+        return api_response(new AuthorityResource(Authority::create($request->validated())));
     }
 
     public function show(Authority $authority)
     {
         $this->authorize('view', $authority);
 
-        return new AuthorityResource($authority);
+        return api_response(new AuthorityResource($authority));
     }
 
     public function update(AuthorityRequest $request, Authority $authority)
@@ -31,7 +31,7 @@ class AuthorityController extends Controller
 
         $authority->update($request->validated());
 
-        return new AuthorityResource($authority);
+        return api_response(new AuthorityResource($authority));
     }
 
     public function destroy(Authority $authority)
@@ -40,6 +40,6 @@ class AuthorityController extends Controller
 
         $authority->delete();
 
-        return response()->json();
+        return api_response();
     }
 }

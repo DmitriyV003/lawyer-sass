@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\ServiceException;
 use App\Http\Requests\GetTaskRequest;
+use App\Http\Requests\StatusRequest;
 use App\Http\Requests\TaskRequest;
 use App\Http\Requests\UpdateTaskToDoDateRequest;
 use App\Http\Resources\TaskResource;
@@ -11,6 +13,7 @@ use App\Reporters\TaskReporter;
 use App\Services\TaskService;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Symfony\Component\HttpFoundation\Response;
 
 class TaskController extends Controller
 {
@@ -68,6 +71,20 @@ class TaskController extends Controller
         $this->authorize('update', $task);
 
         $updatedTask = app(TaskService::class, ['task' => $task])->update($request->validated());
+
+        return api_response(new TaskResource($updatedTask));
+    }
+
+    public function status(Task $task, StatusRequest $request)
+    {
+        $this->authorize('update', $task);
+
+        try {
+            $updatedTask = app(TaskService::class, ['task' => $task])
+                ->updateStatus($request->validated()['status']);
+        } catch (ServiceException $exception) {
+            abort(Response::HTTP_UNPROCESSABLE_ENTITY, $exception->getMessage());
+        }
 
         return api_response(new TaskResource($updatedTask));
     }

@@ -22,10 +22,10 @@ class TaskRequest extends FormRequest
                     return $query->where('user_id', auth()->user()->id);
                 }),
             ],
-            'lawsuit_category_id' => [
+            'lawsuit_id' => [
                 'required',
                 'integer',
-                Rule::exists('lawsuit_categories', 'id')->where(function ($query) {
+                Rule::exists('lawsuits', 'id')->where(function ($query) {
                     return $query->where('user_id', auth()->user()->id);
                 }),
             ],

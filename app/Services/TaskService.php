@@ -5,10 +5,8 @@ namespace App\Services;
 use App\Exceptions\ServiceException;
 use App\Models\Customer;
 use App\Models\Lawsuit;
-use App\Models\LawsuitEvent;
 use App\Models\Task;
 use App\Models\User;
-use Carbon\Carbon;
 
 class TaskService
 {
@@ -37,9 +35,12 @@ class TaskService
         return $this->task;
     }
 
-    public function setFinishedStatus(): Task
+    public function updateStatus(string $status): Task
     {
-        $this->task->status = LawsuitEvent::FINISHED_STATUS;
+        if ($this->task->status == $status) {
+            throw new ServiceException('Нельзя обновить статус');
+        }
+        $this->task->status = $status;
         $this->task->save();
 
         return $this->task;
@@ -47,13 +48,13 @@ class TaskService
 
     private function setParams(array $params): void
     {
-        $lawsuit = $params['lawsuit_id'] ? Lawsuit::find($params['lawsuit_id']) : null;
+        $lawsuit = !empty($params['lawsuit_id']) ? Lawsuit::find($params['lawsuit_id']) : null;
         if ($lawsuit && $params['customer_id'] && $params['customer_id'] !== $lawsuit->customer_id) {
             throw new ServiceException('Клиенты не совадают');
         }
         if ($lawsuit) {
             $this->task->lawsuit()->associate($lawsuit);
-        } else if ($params['customer_id'] && $customer = Customer::find($params['customer_id'])) {
+        } else if (!empty($params['customer_id']) && $customer = Customer::find($params['customer_id'])) {
             $this->task->customer()->associate($customer);
         }
     }
