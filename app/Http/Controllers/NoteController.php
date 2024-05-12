@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NoteQueryRequest;
 use App\Http\Requests\NoteRequest;
 use App\Http\Resources\NoteResource;
 use App\Models\Note;
+use App\Reporters\NoteReporter;
 use App\Services\NoteService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Http\Request;
 
 class NoteController extends Controller
 {
@@ -15,12 +16,16 @@ class NoteController extends Controller
 
     private const ITEMS_PER_PAGE = 20;
 
-    public function index(Request $request)
+    public function index(NoteQueryRequest $request)
     {
         $this->authorize('viewAny', Note::class);
+        $builder = app(NoteReporter::class)
+            ->setUser(auth()->user())
+            ->setLawsuitId($request->query->get('lawsuit_id'))
+            ->builder();
 
         return NoteResource::collection(
-            auth()->user()->notes()->paginate(min($request->query->get('items_per_page'), self::ITEMS_PER_PAGE)),
+            $builder->paginate(min($request->query->get('items_per_page'), self::ITEMS_PER_PAGE)),
         );
     }
 
