@@ -3,13 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Exceptions\ServiceException;
+use App\Http\Requests\GetLawsuitEventRequest;
 use App\Http\Requests\LawsuitEventQueryRequest;
 use App\Http\Requests\LawsuitEventRequest;
 use App\Http\Requests\StatusRequest;
 use App\Http\Resources\LawsuitEventResource;
 use App\Models\LawsuitEvent;
+use App\Reporters\EventReporter;
 use App\Reporters\LawsuitEventReporter;
 use App\Services\LawsuitEventService;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -80,5 +83,19 @@ class LawsuitEventController extends Controller
         }
 
         return api_response(new LawsuitEventResource($updatedEvent->load(['lawsuit', 'customer', 'lawsuit.customer'])));
+    }
+
+    public function groupEvents(GetLawsuitEventRequest $request)
+    {
+        $builder = app(EventReporter::class)
+            ->setUser(auth()->user())
+            ->setSince(new Carbon($request->since))
+            ->setTill(new Carbon($request->till));
+
+        return api_response($builder->groupBySince()->map(function ($items) {
+            return $items->map(function ($item) {
+                return new LawsuitEventResource($item);
+            });
+        })->sortDesc());
     }
 }

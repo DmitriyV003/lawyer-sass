@@ -12,6 +12,7 @@ use App\Http\Controllers\LawsuitEventCategoryController;
 use App\Http\Controllers\LawsuitEventController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\TaskTagController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -62,7 +63,15 @@ Route::prefix('/v1')->group(function () {
             Route::apiResource('/', LawsuitEventController::class)
                 ->only('index', 'show', 'store', 'destroy', 'update');
             Route::post('/{lawsuitEvent}/status', [LawsuitEventController::class, 'status']);
+            Route::get('/group', [LawsuitEventController::class, 'groupEvents']);
         });
-        Route::apiResource('/note', NoteController::class);
+        Route::apiResource('/note', NoteController::class)
+            ->only('index', 'show', 'store', 'destroy', 'update');
+        Route::prefix('/task')->group(function () {
+            Route::apiResource('/', TaskController::class)
+                ->only('index', 'show', 'store', 'destroy', 'update');
+            Route::patch('/{task}/to-do-date', [TaskController::class, 'updateToDoDate']);
+            Route::post('/{task}/status', [TaskController::class, 'status']);
+        });
     });
 });
