@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": "lawsuit-category",
+			"name": "lawsuit-category (категория дела)",
 			"item": [
 				{
 					"name": "Получение категорий дел",
@@ -999,7 +999,7 @@
 			]
 		},
 		{
-			"name": "task-tag",
+			"name": "task-tag (тег задачи)",
 			"item": [
 				{
 					"name": "Получение тэгов для задач",
@@ -2043,7 +2043,7 @@
 			]
 		},
 		{
-			"name": "lawsuit-event-category",
+			"name": "lawsuit-event-category (категрия ивента)",
 			"item": [
 				{
 					"name": "Получение категории ивента по id",
@@ -2996,7 +2996,7 @@
 			]
 		},
 		{
-			"name": "lawsuit",
+			"name": "lawsuit (дело)",
 			"item": [
 				{
 					"name": "Получение дел",
@@ -4173,7 +4173,7 @@
 			]
 		},
 		{
-			"name": "authority",
+			"name": "authority (орган рассмотрения)",
 			"item": [
 				{
 					"name": "Создание органа рассмотрения",
@@ -5158,7 +5158,7 @@
 			]
 		},
 		{
-			"name": "customer",
+			"name": "customer (клиент)",
 			"item": [
 				{
 					"name": "Создание клиента",
@@ -6952,7 +6952,7 @@
 			]
 		},
 		{
-			"name": "lawsuit-event",
+			"name": "lawsuit-event (ивент)",
 			"item": [
 				{
 					"name": "Создание ивента",
@@ -8640,7 +8640,7 @@
 			]
 		},
 		{
-			"name": "task",
+			"name": "task (задача)",
 			"item": [
 				{
 					"name": "Создание задачи",
@@ -10206,7 +10206,7 @@
 			]
 		},
 		{
-			"name": "note",
+			"name": "note (заметка)",
 			"item": [
 				{
 					"name": "Создание заметки",
