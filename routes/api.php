@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AuthController as AdminAuthControllerAlias;
 use App\Http\Controllers\Admin\RegistrationController as AdminRegistrationControllerAlias;
+use App\Http\Controllers\Admin\TariffController as AdminTariffController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AuthorityController;
@@ -31,6 +32,15 @@ Route::prefix('/v1')->group(function () {
     });
 
     Route::middleware('auth:api')->group(function () {
+        Route::prefix('/admin')->group(function () {
+            Route::prefix('/tariff')->group(function () {
+                Route::apiResource('/', AdminTariffController::class)
+                    ->only('index', 'show', 'store', 'destroy', 'update')
+                    ->withTrashed();
+                Route::patch('/{tariff}/update-status', [AdminTariffController::class, 'updateStatus']);
+            });
+        })->middleware('role:super admin');
+
         Route::get('/application', ApplicationController::class);
         Route::prefix('/auth')->group(function () {
             Route::post('/logout', [AuthController::class, 'logout']);
