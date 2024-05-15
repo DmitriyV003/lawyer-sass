@@ -9,6 +9,23 @@ class TariffService
 {
     private ?Tariff $tariff;
 
+    public function create(array $params): Tariff
+    {
+        $this->tariff = app(Tariff::class)->fill($params);
+        $this->tariff->save();
+        $this->tariff->permissions()->sync($params['permission_ids']);
+
+        return $this->tariff;
+    }
+
+    public function update(array $params): Tariff
+    {
+        $this->tariff->fill($params)->save();
+        $this->tariff->permissions()->sync($params['permission_ids']);
+
+        return $this->tariff;
+    }
+
     public function __construct(?Tariff $tariff)
     {
         $this->tariff = $tariff;
