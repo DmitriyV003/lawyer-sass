@@ -44,7 +44,7 @@ class AuthController extends Controller
 
     protected function restrictedRole($user): bool
     {
-        return (bool) $user?->hasRole(User::SUPER_ADMIN_ROLE);
+        return $user ? $user->hasRole(User::SUPER_ADMIN_ROLE) : true;
     }
 
     protected function respondWithToken($token)
