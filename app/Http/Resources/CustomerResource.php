@@ -22,6 +22,8 @@ class CustomerResource extends JsonResource
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
             'lawsuits' => LawsuitResource::collection($this->whenLoaded('lawsuits')),
+            'latest_validity_lawsuit' =>
+                new LawsuitResource($this->whenLoaded('latestLawsuitByContractValidityDate')),
         ];
     }
 }

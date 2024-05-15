@@ -22,7 +22,10 @@ class UserResource extends JsonResource
             'working_time_interval' => $this->resource->working_time_interval,
             'roles' => $this->whenLoaded('roles', function () {
                 return $this->resource->roles->pluck('name');
-            })
+            }),
+            'permissions' => $this->whenLoaded('permissions', function () {
+                return $this->resource->roles->pluck('name');
+            }),
         ];
     }
 }
