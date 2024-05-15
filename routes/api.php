@@ -33,12 +33,10 @@ Route::prefix('/v1')->group(function () {
 
     Route::middleware('auth:api')->group(function () {
         Route::prefix('/admin')->group(function () {
-            Route::prefix('/tariff')->group(function () {
-                Route::apiResource('/', AdminTariffController::class)
-                    ->only('index', 'show', 'store', 'destroy', 'update')
-                    ->withTrashed();
-                Route::patch('/{tariff}/update-status', [AdminTariffController::class, 'updateStatus']);
-            });
+            Route::patch('/tariff/{tariff}/update-status', [AdminTariffController::class, 'updateStatus']);
+            Route::apiResource('tariff', AdminTariffController::class)
+                ->only('index', 'show', 'store', 'destroy', 'update')
+                ->withTrashed();
         })->middleware('role:super admin');
 
         Route::get('/application', ApplicationController::class);
@@ -51,18 +49,14 @@ Route::prefix('/v1')->group(function () {
             Route::put('/', [UserController::class, 'update']);
             Route::put('/update-password', [UserController::class, 'updatePassword']);
         });
-        Route::prefix('/customer')->group(function () {
-            Route::apiResource('/', CustomerController::class)
-                ->only('index', 'show', 'store', 'destroy', 'update');
-            Route::get('/{customer}/events', [CustomerController::class, 'events']);
-        });
+        Route::apiResource('customer', CustomerController::class)
+            ->only('index', 'show', 'store', 'destroy', 'update');
+        Route::get('/customer/{customer}/events', [CustomerController::class, 'events']);
         Route::apiResource('lawsuit-category', LawsuitCategoryController::class)
             ->only('index', 'show', 'store', 'destroy', 'update');
-        Route::prefix('/lawsuit')->group(function () {
-            Route::apiResource('/', LawsuitController::class)
-                ->only('index', 'show', 'store', 'destroy', 'update');
-            Route::get('/{lawsuit}/authorities', [LawsuitController::class, 'authorities']);
-        });
+        Route::apiResource('lawsuit', LawsuitController::class)
+            ->only('index', 'show', 'store', 'destroy', 'update');
+        Route::get('/lawsuit/{lawsuit}/authorities', [LawsuitController::class, 'authorities']);
         Route::apiResource('authority', AuthorityController::class)
             ->only('show', 'store', 'destroy', 'update');
         Route::apiResource('task-tag', TaskTagController::class)
@@ -70,18 +64,18 @@ Route::prefix('/v1')->group(function () {
         Route::apiResource('lawsuit-event-category', LawsuitEventCategoryController::class)
             ->only('index', 'show', 'store', 'destroy', 'update');
         Route::prefix('/lawsuit-event')->group(function () {
-            Route::apiResource('/', LawsuitEventController::class)
-                ->only('index', 'show', 'store', 'destroy', 'update');
             Route::post('/{lawsuitEvent}/status', [LawsuitEventController::class, 'status']);
             Route::get('/group', [LawsuitEventController::class, 'groupEvents']);
         });
+        Route::apiResource('lawsuit-event', LawsuitEventController::class)
+            ->only('index', 'show', 'store', 'destroy', 'update');
         Route::apiResource('/note', NoteController::class)
             ->only('index', 'show', 'store', 'destroy', 'update');
         Route::prefix('/task')->group(function () {
-            Route::apiResource('/', TaskController::class)
-                ->only('index', 'show', 'store', 'destroy', 'update');
             Route::patch('/{task}/to-do-date', [TaskController::class, 'updateToDoDate']);
             Route::post('/{task}/status', [TaskController::class, 'status']);
         });
+        Route::apiResource('task', TaskController::class)
+            ->only('index', 'show', 'store', 'destroy', 'update');
     });
 });
