@@ -13,6 +13,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('cost');
+            $table->string('status');
             $table->string('comment')->nullable();
             $table->softDeletes();
             $table->timestamps();

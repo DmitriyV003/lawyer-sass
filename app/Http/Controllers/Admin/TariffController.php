@@ -20,30 +20,36 @@ class TariffController extends Controller
     {
         $this->authorize('viewAny', Tariff::class);
 
-        return TariffResource::collection(Tariff::query()->withCount('users')->withTrashed()->paginate(40));
+        return TariffResource::collection(
+            Tariff::query()
+                ->withCount('users')
+                ->withTrashed()
+                ->with('permissions')
+                ->paginate(40)
+        );
     }
 
     public function store(TariffRequest $request)
     {
         $this->authorize('create', Tariff::class);
+        $tariff = app(TariffService::class)->create($request->validated());
 
-        return api_response(new TariffResource(Tariff::create($request->validated())));
+        return api_response(new TariffResource($tariff->load('permissions')));
     }
 
     public function show(Tariff $tariff)
     {
         $this->authorize('view', $tariff);
 
-        return api_response(new TariffResource($tariff));
+        return api_response(new TariffResource($tariff->load('permissions')));
     }
 
     public function update(TariffRequest $request, Tariff $tariff)
     {
         $this->authorize('update', $tariff);
+        $tariff = app(TariffService::class, ['tariff' => $tariff])->update($request->validated());
 
-        $tariff->update($request->validated());
-
-        return api_response(new TariffResource($tariff));
+        return api_response(new TariffResource($tariff->load('permissions')));
     }
 
     public function destroy(Tariff $tariff)

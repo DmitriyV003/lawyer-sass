@@ -20,6 +20,7 @@ class TariffResource extends JsonResource
             'updated_at' => $this->updated_at,
             'deleted_at' => $this->deleted_at,
             'users_count' => $this->whenCounted('users'),
+            'permissions' => PermissionResource::collection($this->whenLoaded('permissions'))
         ];
     }
 }
