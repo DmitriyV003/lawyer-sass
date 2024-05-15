@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Customer extends Model
@@ -37,6 +38,11 @@ class Customer extends Model
     public function lawsuits(): HasMany
     {
         return $this->hasMany(Lawsuit::class);
+    }
+
+    public function latestLawsuitByContractValidityDate(): HasOne
+    {
+        return $this->hasOne(Lawsuit::class)->latestOfMany('contract_validity');
     }
 
     public function tasks(): HasMany

@@ -4,17 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CustomerRequest;
 use App\Http\Resources\CustomerResource;
-use App\Http\Resources\TaskOrEventResource;
 use App\Models\Customer;
-use App\Models\LawsuitEvent;
-use App\Models\Task;
+use App\Reporters\CustomerReporter;
 use App\Reporters\EventReporter;
 use App\Reporters\TaskReporter;
 use App\Services\CustomerService;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use function Laravel\Prompts\select;
 
 class CustomerController extends Controller
 {
@@ -25,9 +22,15 @@ class CustomerController extends Controller
     public function index(Request $request)
     {
         $this->authorize('viewAny', Customer::class);
+        $builder = app(CustomerReporter::class)
+            ->setUser(auth()->user())
+            ->contractValidityDateSortAsc()
+            ->builder();
 
         return CustomerResource::collection(
-            auth()->user()->customers()->paginate(min($request->query->get('items_per_page'), self::ITEMS_PER_PAGE)),
+            $builder
+                ->with('latestLawsuitByContractValidityDate')
+                ->paginate(min($request->query->get('items_per_page'), self::ITEMS_PER_PAGE)),
         );
     }
 

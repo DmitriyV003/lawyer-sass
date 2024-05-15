@@ -18,17 +18,10 @@ return new class extends Migration
             $table->softDeletes();
             $table->timestamps();
         });
-        Schema::table('users', function (Blueprint $table) {
-            $table->foreignIdFor(Tariff::class)->nullable()->references('id')->on('tariffs');
-        });
     }
 
     public function down(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign(['tariff_id']);
-            $table->dropColumn('tariff_id');
-        });
         Schema::dropIfExists('tariffs');
     }
 };

@@ -27,11 +27,6 @@ class Tariff extends Model
         'status',
     ];
 
-    public function users(): HasMany
-    {
-        return $this->hasMany(User::class);
-    }
-
     public function permissions(): BelongsToMany
     {
         return $this->belongsToMany(Permission::class, 'tariff_permission');
